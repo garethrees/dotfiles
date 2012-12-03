@@ -14,8 +14,8 @@ export PS1="\u:\W \$(parse_git_branch)$ "
 
 # Aliases
 alias ..="cd .."
-alias ls="ls -G"
+alias grep='grep --color=auto'
 alias la="ls -AlhG"
 alias ll="ls -lhG"
-alias grep='grep --color=auto'
+alias ls="ls -G"
 alias openports='sudo lsof -i -P | grep -i "listen"'
