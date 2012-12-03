@@ -14,7 +14,10 @@ export PS1="\u:\W \$(parse_git_branch)$ "
 
 # Aliases
 alias ..="cd .."
+alias df='df -kh'
+alias du='du -kh'
 alias grep='grep --color=auto'
+alias h='history'
 alias la="ls -AlhG"
 alias ll="ls -lhG"
 alias ls="ls -G"
