@@ -5,8 +5,8 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(blue)(%an <%ae>)%Creset' --abbrev-commit --date=relative
   slog = log --pretty=oneline
   st = status -s
-  standup = log --since yesterday --oneline --author gareth.rees@boxuk.com
-  today = git log --since today --oneline --author gareth.rees@boxuk.com
+  standup = log --since yesterday --oneline --author ADD_EMAIL_HERE
+  today = git log --since today --oneline --author ADD_EMAIL_HERE
   # search logs for commit ticket number
   # e.g. git find #1234
   find = "!f() { git log --oneline | grep \"$@\"; }; f"
