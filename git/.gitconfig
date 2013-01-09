@@ -3,7 +3,7 @@
   email = ADD_EMAIL_HERE
 [alias]
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(blue)(%an <%ae>)%Creset' --abbrev-commit --date=relative
-  slog = log --pretty=format:'%Cred%h %Creset%s %Cblue(%an <%ae>)%Creset' -n 15
+  ls = log --pretty=format:'%Cred%h %Creset%s %Cblue(%an <%ae>)%Creset' -n 15
   st = status -s
   standup = log --since yesterday --oneline --author ADD_EMAIL_HERE
   today = git log --since today --oneline --author ADD_EMAIL_HERE
