@@ -24,4 +24,4 @@ alias la="ls -AlhG"
 alias ll="ls -lhG"
 alias ls="ls -G"
 alias openports='sudo lsof -i -P | grep -i "listen"'
-alias tree="tree -a"
+alias tree="tree -aC"
