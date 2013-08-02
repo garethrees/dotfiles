@@ -11,6 +11,7 @@ parse_git_branch() {
 
 # Set prompt
 export PS1="\u:\W \$(parse_git_branch)$ "
+export EDITOR='vim'
 
 # Aliases
 alias ..="cd .."
