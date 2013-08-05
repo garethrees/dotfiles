@@ -1,0 +1,65 @@
+# bash_prompt
+
+# Based on @gf3’s Sexy Bash Prompt: https://github.com/gf3/dotfiles
+# iTerm2 prefs: import Solarized theme (disable bright colors for bold text)
+# Color ref: http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
+# More tips: http://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html
+# Screenshot: http://i.imgur.com/DSJ1G.png
+
+# Example:
+# nicolas@host: ~/.dotfiles on master[!?]
+# $
+
+# Check that terminfo exists before changing TERM var to xterm-256color
+# Prevents prompt flashing in Mac OS X 10.6 Terminal.app
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+  export TERM='xterm-256color'
+fi
+
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUPSTREAM="auto"
+test -f ~/.git_prompt.sh && source ~/.git_prompt.sh
+
+tput sgr 0 0
+
+# Base styles and color palette
+# Solarized colors
+# https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized
+BOLD=$(tput bold)
+RESET=$(tput sgr0)
+SOLAR_YELLOW=$(tput setaf 136)
+SOLAR_ORANGE=$(tput setaf 166)
+SOLAR_RED=$(tput setaf 124)
+SOLAR_MAGENTA=$(tput setaf 125)
+SOLAR_VIOLET=$(tput setaf 61)
+SOLAR_BLUE=$(tput setaf 33)
+SOLAR_CYAN=$(tput setaf 37)
+SOLAR_GREEN=$(tput setaf 64)
+SOLAR_WHITE=$(tput setaf 254)
+
+style_user="\[${RESET}${SOLAR_ORANGE}\]"
+style_host="\[${RESET}${SOLAR_YELLOW}\]"
+style_path="\[${RESET}${SOLAR_GREEN}\]"
+style_chars="\[${RESET}${SOLAR_WHITE}\]"
+style_branch="${SOLAR_CYAN}"
+
+if [[ "$SSH_TTY" ]]; then
+    # connected via ssh
+    style_host="\[${BOLD}${SOLAR_GREEN}\]"
+elif [[ "$USER" == "root" ]]; then
+    # logged in as root
+    style_user="\[${BOLD}${SOLAR_RED}\]"
+fi
+
+# Build the prompt
+PS1="\n" # Newline
+PS1+="${style_user}\u" # Username
+PS1+="${style_chars}@" # @
+PS1+="${style_host}\h" # Host
+PS1+="${style_chars}: " # :
+PS1+="${style_path}\w " # Working directory
+PS1+='${style_branch}$(__git_ps1 "(%s)")' #git prompt
+PS1+="\n" # Newline
+PS1+="${style_chars}\$ \[${RESET}\]" # $ (and reset color)
+export PS1
