@@ -45,11 +45,11 @@ style_chars="\[${RESET}${SOLAR_WHITE}\]"
 style_branch="${SOLAR_CYAN}"
 
 if [[ "$SSH_TTY" ]]; then
-    # connected via ssh
-    style_host="\[${BOLD}${SOLAR_GREEN}\]"
+  # connected via ssh
+  style_host="\[${BOLD}${SOLAR_GREEN}\]"
 elif [[ "$USER" == "root" ]]; then
-    # logged in as root
-    style_user="\[${BOLD}${SOLAR_RED}\]"
+  # logged in as root
+  style_user="\[${BOLD}${SOLAR_RED}\]"
 fi
 
 # Build the prompt
