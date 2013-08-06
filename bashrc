@@ -4,6 +4,7 @@
 
 # Environment
 export EDITOR='vim'
+PATH=$PATH:$HOME/.rvm/bin
 
 # Source global definitions
 [[ -f /etc/bashrc ]] && source /etc/bashrc
@@ -12,7 +13,7 @@ export EDITOR='vim'
 
 # Extras
 [[ -f ~/.git-completion.sh ]] && source ~/.git-completion.sh
-[[ -s "/Users/gareth/.rvm/scripts/rvm" ]] && source "/Users/gareth/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Make less more friendly for non-text input files; see lesspipe(1)
 [[ -x $(which lesspipe) ]] && eval "$(SHELL=/bin/sh $(which lesspipe))"
