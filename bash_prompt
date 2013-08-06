@@ -53,7 +53,7 @@ elif [[ "$USER" == "root" ]]; then
 fi
 
 # Build the prompt
-PS1="\n" # Newline
+PS1="" # Reset
 PS1+="${style_user}\u" # Username
 PS1+="${style_chars}@" # @
 PS1+="${style_host}\h" # Host
