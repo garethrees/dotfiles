@@ -12,6 +12,8 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+let mapleader = ","
+
 " Soft tabs
 set smartindent
 set expandtab
