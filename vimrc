@@ -1,10 +1,10 @@
+" Vim app settings
+set nocompatible
+
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
-" Vim app settings
-set nocompatible
 
 " Key mappings
 noremap <Up> <NOP>
