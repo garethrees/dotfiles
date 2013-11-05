@@ -7,10 +7,15 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Key mappings
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+map <Up> <NOP>
+map <Down> <NOP>
+map <Left> <NOP>
+map <Right> <NOP>
+
+imap <Up> <NOP>
+imap <Down> <NOP>
+imap <Left> <NOP>
+imap <Right> <NOP>
 
 let mapleader = ","
 
