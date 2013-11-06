@@ -55,11 +55,9 @@ fi
 # Build the prompt
 PS1="" # Reset
 PS1+="${style_user}\u" # Username
-PS1+="${style_chars}@" # @
-PS1+="${style_host}\h" # Host
 PS1+="${style_chars}: " # :
 PS1+="${style_path}\w " # Working directory
-PS1+='${style_branch}$(__git_ps1 "(%s)")' #git prompt
+PS1+='${style_branch}$(__git_ps1 "(%s)")' # git prompt
 PS1+="\n" # Newline
 PS1+="${style_chars}\$ \[${RESET}\]" # $ (and reset color)
 export PS1
