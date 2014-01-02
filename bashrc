@@ -13,7 +13,8 @@ PATH=$PATH:$HOME/.rvm/bin
 
 # Extras
 [[ -f ~/.git-completion.sh ]] && source ~/.git-completion.sh
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Make less more friendly for non-text input files; see lesspipe(1)
 [[ -x $(which lesspipe) ]] && eval "$(SHELL=/bin/sh $(which lesspipe))"
