@@ -10,6 +10,8 @@ fi
 
 brew update
 brew upgrade
+
+brew tap thoughtbot/formulae
 brew tap phinze/cask
 
 brew install brew-cask
@@ -19,6 +21,7 @@ brew install git
 brew install imagemagick
 # brew install mysql
 brew install openssl
+brew install rcm
 # brew install rbenv
 brew install readline
 # brew install ruby-build
