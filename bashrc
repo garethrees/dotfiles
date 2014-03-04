@@ -12,7 +12,7 @@ PATH=$PATH:$HOME/.rvm/bin
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 
 # Extras
-[[ -f ~/.git-completion.sh ]] && source ~/.git-completion.sh
+[[ -f ~/.git_completion.sh ]] && source ~/.git_completion.sh
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
