@@ -18,6 +18,7 @@ brew install brew-cask
 # brew install elixir
 # brew install erlang
 brew install git
+brew install gitsh
 brew install imagemagick
 # brew install mysql
 brew install openssl
