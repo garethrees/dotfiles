@@ -39,6 +39,7 @@ brew cask install f-lux
 brew cask install gitx-rowanj
 brew cask install google-chrome
 brew cask install iterm2
+brew cask install jdiskreport
 brew cask install monolingual
 brew cask install nvalt
 brew cask install paparazzi
