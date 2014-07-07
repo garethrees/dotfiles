@@ -55,6 +55,10 @@ fi
 # Build the prompt
 PS1="" # Reset
 PS1+="${style_user}\u" # Username
+if ! [[ $(hostname) =~ gareth-* ]]; then
+  PS1+="${style_chars}@" # @
+  PS1+="${style_host}\h" # Host
+fi
 PS1+="${style_chars}: " # :
 PS1+="${style_path}\w " # Working directory
 PS1+='${style_branch}$(__git_ps1 "(%s)")' # git prompt
