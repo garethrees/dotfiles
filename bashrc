@@ -4,6 +4,7 @@
 
 # Environment
 export EDITOR='vim'
+PATH="/usr/local/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin
 
 # Source global definitions
