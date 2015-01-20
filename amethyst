@@ -1,4 +1,7 @@
-"floating": [
+{
+  "floating": [
     "com.apple.systempreferences",
-    "com.twitter.twitter-mac"
-],
+    "com.twitter.twitter-mac",
+    "com.apple.iCal"
+  ]
+}
