@@ -15,6 +15,7 @@ brew tap thoughtbot/formulae
 brew tap phinze/cask
 
 brew install brew-cask
+brew install datamash
 # brew install elixir
 # brew install erlang
 brew install git
