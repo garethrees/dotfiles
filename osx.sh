@@ -1,8 +1,11 @@
-s is script with usefull tips taken from:
+#!/usr/bin/env sh
+ 
+##
+# This is script with usefull tips taken from:
 #   https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 #
 # install it:
-#   curl -sL https://raw.github.com/gist/2470157/hack.sh | sh
+#   curl -sL https://raw.github.com/gist/2108403/hack.sh | sh
 #
 
 echo "Enable subpixel font rendering on non-Apple LCDs (1 light, 2 medium, 3 big)"
