@@ -69,7 +69,6 @@ Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-rails.git'
 Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'kien/ctrlp.vim'
 Bundle 'ddollar/nerdcommenter'
