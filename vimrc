@@ -27,6 +27,9 @@ let mapleader = ","
 
 map <leader>n :NERDTreeToggle<CR>
 
+map <Enter> o<ESC>
+map <S-Enter> O<ESC>
+
 " Soft tabs
 set smartindent
 set expandtab
