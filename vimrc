@@ -17,6 +17,12 @@ imap <Down> <NOP>
 imap <Left> <NOP>
 imap <Right> <NOP>
 
+" Split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 let mapleader = ","
 
 " Soft tabs
@@ -50,6 +56,9 @@ vnoremap za <Esc>`<kzfgg`>jzfG`<
 
 " ensure unix line endings
 set ff=unix
+
+set splitbelow
+set splitright
 
 Bundle 'gmarik/vundle'
 
