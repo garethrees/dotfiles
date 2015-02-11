@@ -274,7 +274,7 @@ __git_ps1 ()
       fi
 
       if [ -n "${GIT_PS1_SHOWUNTRACKEDFILES-}" ]; then
-        if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+        if [ -n "$(git status|grep -p Untracked)" ]; then
           u="%"
         fi
       fi
