@@ -46,7 +46,7 @@ style_branch="${SOLAR_CYAN}"
 
 if [[ "$SSH_TTY" ]]; then
   # connected via ssh
-  style_host="\[${BOLD}${SOLAR_GREEN}\]"
+  style_host="\[${BOLD}${SOLAR_YELLOW}\]"
 elif [[ "$USER" == "root" ]]; then
   # logged in as root
   style_user="\[${BOLD}${SOLAR_RED}\]"
