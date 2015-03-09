@@ -28,6 +28,7 @@ brew install rcm
 brew install readline
 # brew install ruby-build
 # brew install sqlite
+brew install tmux
 brew install tree
 brew install vim
 brew install wget --enable-iri
