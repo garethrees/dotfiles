@@ -26,6 +26,7 @@ brew install openssl
 brew install rcm
 # brew install rbenv
 brew install readline
+brew install reattach-to-user-namespace
 # brew install ruby-build
 # brew install sqlite
 brew install tmux
