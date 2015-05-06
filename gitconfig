@@ -24,4 +24,4 @@
 [core]
   excludesfile = ~/.gitignore_global
 [rebase]
-	autosquash = true
+  autosquash = true
