@@ -2,6 +2,7 @@
   name = Gareth Rees
   email = ADD_EMAIL_HERE
 [alias]
+  a  = add
   ap = add -p
   co = checkout
   d  = diff
