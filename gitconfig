@@ -2,6 +2,7 @@
   name = Gareth Rees
   email = ADD_EMAIL_HERE
 [alias]
+  ap = add -p
   co = checkout
   fo = fetch origin -p
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(blue)(%an <%ae>)%Creset' --abbrev-commit --date=relative
@@ -9,6 +10,12 @@
   ll = log --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cblue(%an)%Creset' --decorate --numstat
   d  = diff
   ds = diff --staged
+  r  = rebase
+  ri = rebase -i
+  s  = stash
+  sa = stash apply
+  sl = stash list
+  sp = stash pop
   st = status -s
   standup = log --since yesterday --oneline --author ADD_EMAIL_HERE
   today = git log --since today --oneline --author ADD_EMAIL_HERE
