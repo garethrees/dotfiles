@@ -4,6 +4,7 @@
 [alias]
   a  = add
   ap = add -p
+  cm = commit -v
   co = checkout
   d  = diff
   ds = diff --staged
@@ -11,7 +12,9 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(blue)(%an <%ae>)%Creset' --abbrev-commit --date=relative
   ll = log --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cblue(%an)%Creset' --decorate --numstat
   ls = log --pretty=format:'%Cred%h %Creset%s %Cblue(%an <%ae>)%Creset' -n 15
+  po = push origin
   r  = rebase
+  rc = rebase --continue
   ri = rebase -i
   s  = stash
   sa = stash apply
