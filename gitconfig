@@ -4,6 +4,7 @@
 [alias]
   a  = add
   ap = add -p
+  cbr = rev-parse --abbrev-ref HEAD # current branch
   cm = commit -v
   co = checkout
   d  = diff
