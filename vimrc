@@ -49,6 +49,7 @@ set tabstop=2
 syntax on
 set number
 set t_Co=256
+set laststatus=2 " Always show status bar
 
 " Colours
 set background=dark
