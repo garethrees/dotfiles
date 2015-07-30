@@ -12,8 +12,11 @@ PATH=$PATH:$HOME/.rvm/bin
 [[ -f ~/.bash_prompt ]] && source ~/.bash_prompt
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 
-# Extras
+# Completion
 [[ -f ~/.git_completion.sh ]] && source ~/.git_completion.sh
+[[ -f ~/.script/tmuxinator.bash ]] && source ~/.script/tmuxinator.bash
+
+# Extras
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
