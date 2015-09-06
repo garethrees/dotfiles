@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+
+cd "$(dirname "$0")/.."
+DOTFILES_DIR=$(pwd)
+
+for source in *; do
+  target="$HOME/.$(basename "$source")"
+  ln -sfv "$DOTFILES_DIR/$source" "$target"
+done
