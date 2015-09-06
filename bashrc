@@ -13,7 +13,7 @@ PATH=$PATH:$HOME/.rvm/bin
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 
 # Completion
-[[ -f ~/.git_completion.sh ]] && source ~/.git_completion.sh
+[[ -f ~/.script/git_completion.sh ]] && source ~/.script/git_completion.sh
 [[ -f ~/.script/tmuxinator.bash ]] && source ~/.script/tmuxinator.bash
 
 # Extras

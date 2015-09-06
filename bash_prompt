@@ -19,7 +19,7 @@ fi
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUPSTREAM="auto"
-test -f ~/.git_prompt.sh && source ~/.git_prompt.sh
+test -f ~/.script/git_prompt.sh && source ~/.script/git_prompt.sh
 
 tput sgr 0 0
 
