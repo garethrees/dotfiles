@@ -30,9 +30,9 @@
   # e.g. git find #1234
   find = "!f() { git log --oneline | grep \"$@\"; }; f"
 [pager]
-  diff = /usr/local/Library/LinkedKegs/git/share/git-core/contrib/diff-highlight/diff-highlight | less
-  log  = /usr/local/Library/LinkedKegs/git/share/git-core/contrib/diff-highlight/diff-highlight | less
-  show = /usr/local/Library/LinkedKegs/git/share/git-core/contrib/diff-highlight/diff-highlight | less
+  diff = diff-highlight | less
+  log  = diff-highlight | less
+  show = diff-highlight | less
 [color]
   ui = true
 [core]
