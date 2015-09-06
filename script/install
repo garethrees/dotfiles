@@ -21,3 +21,5 @@ for source in "$HOME/.bin/"*; do
     ln -sv "$source" "$target"
   fi
 done
+
+source "$DOTFILES_DIR/script/install-user-bins.sh"
