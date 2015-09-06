@@ -15,6 +15,7 @@ brew tap thoughtbot/formulae
 brew tap phinze/cask
 
 brew install brew-cask
+brew install chruby
 brew install coreutils
 brew install datamash
 # brew install elixir
@@ -29,6 +30,7 @@ brew install rcm
 brew install readline
 brew install reattach-to-user-namespace
 # brew install ruby-build
+brew install ruby-install
 # brew install sqlite
 brew install tmux
 brew install tree
