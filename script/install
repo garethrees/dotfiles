@@ -6,5 +6,18 @@ DOTFILES_DIR=$(pwd)
 
 for source in *; do
   target="$HOME/.$(basename "$source")"
-  ln -sfv "$DOTFILES_DIR/$source" "$target"
+  if [[ ! -L "$target" ]]; then
+    ln -sv "$DOTFILES_DIR/$source" "$target"
+  fi
+done
+
+# Link binfiles
+BIN_DIR="$HOME/bin"
+mkdir -pv $BIN_DIR
+
+for source in "$HOME/.bin/"*; do
+  target="$BIN_DIR/$(basename "$source")"
+  if [[ ! -L "$target" ]]; then
+    ln -sv "$source" "$target"
+  fi
 done

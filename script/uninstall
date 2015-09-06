@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
 cd "$(dirname "$0")/.."
@@ -12,3 +12,5 @@ for source in *; do
     fi
   fi
 done
+
+rm -rfv "$HOME/bin"
