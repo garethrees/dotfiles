@@ -18,7 +18,16 @@ PATH=$PATH:$HOME/.rvm/bin
 [[ -f ~/.script/tmuxinator.bash ]] && source ~/.script/tmuxinator.bash
 
 # Extras
-export RBENV_ROOT=/usr/local/var/rbenv
+if [[ -d /usr/local/var/rbenv ]]
+  then
+    export RBENV_ROOT=/usr/local/var/rbenv
+fi
+
+if [[ -d /usr/local/rbenv ]]
+  then
+    export RBENV_ROOT=/usr/local/rbenv
+fi
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Make less more friendly for non-text input files; see lesspipe(1)
