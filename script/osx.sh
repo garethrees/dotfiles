@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
  
 ##
-# This is script with usefull tips taken from:
+# This is script with useful tips taken from:
 #   https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 #
 # install it:
