@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require 'base64'
+require 'pp'
 
 if ARGV.empty?
   abort <<-EOF
@@ -16,7 +17,7 @@ session_cookie =
   end
 
 begin
-  puts Marshal.load(Base64.decode64(session_cookie))
+  pp Marshal.load(Base64.decode64(session_cookie))
 rescue ArgumentError => err
   abort err.message
 end
