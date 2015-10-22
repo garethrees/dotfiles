@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+require 'base64'
+
+if ARGV.empty?
+  abort <<-EOF
+Usage: "#{ File.basename($0) }" cookie_value
+EOF
+end
+
+session_cookie = ARGV.shift
+session_cookie =
+  if session_cookie.include?('--')
+    session_cookie.split('--').first
+  else
+    session_cookie
+  end
+
+begin
+  puts Marshal.load(Base64.decode64(session_cookie))
+rescue ArgumentError => err
+  abort err.message
+end
