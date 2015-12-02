@@ -68,6 +68,7 @@ brew cask install monolingual
 brew cask install nvalt
 brew cask install paparazzi
 brew cask install postico
+brew cask install qlstephen
 brew cask install sequel-pro
 brew cask install selfcontrol
 brew cask install sitesucker
