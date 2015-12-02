@@ -68,6 +68,7 @@ brew cask install paparazzi
 brew cask install postico
 brew cask install sequel-pro
 brew cask install selfcontrol
+brew cask install sitesucker
 brew cask install sketchup
 brew cask install skype
 brew cask install spectacle
