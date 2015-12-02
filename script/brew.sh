@@ -15,6 +15,7 @@ brew tap thoughtbot/formulae
 brew tap phinze/cask
 
 brew install ack
+brew install apptrap
 brew install automake
 brew install caskroom/cask/brew-cask
 brew install chruby
@@ -37,6 +38,7 @@ brew install nmap
 brew install node
 brew install ossp-uuid
 brew install postgresql
+brew install prey
 brew install python
 brew install reattach-to-user-namespace
 brew install ruby-install
