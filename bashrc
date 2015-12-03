@@ -4,6 +4,9 @@
 
 # Environment
 export EDITOR='vim'
+export HOMEBREW_CASK_OPTS='--appdir=/Applications'
+
+# Path
 PATH="/usr/local/bin:$PATH"
 PATH="$HOME/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin
