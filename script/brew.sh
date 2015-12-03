@@ -52,7 +52,6 @@ brew install vim
 brew install wget --enable-iri
 
 brew cask install alfred
-brew cask alfred link
 brew cask install carbon-copy-cloner
 brew cask install cyberghost
 brew cask install dropbox
