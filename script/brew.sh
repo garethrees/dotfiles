@@ -56,7 +56,7 @@ brew cask alfred link
 brew cask install carbon-copy-cloner
 brew cask install cyberghost
 brew cask install dropbox
-brew cask install f-lux
+brew cask install flux
 brew cask install firefox
 brew cask install google-chrome
 brew cask install iterm2
