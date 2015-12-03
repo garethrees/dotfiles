@@ -58,7 +58,6 @@ brew cask install cyberghost
 brew cask install dropbox
 brew cask install f-lux
 brew cask install firefox
-brew cask install gitx-rowanj
 brew cask install google-chrome
 brew cask install iterm2
 brew cask install jdiskreport
@@ -69,6 +68,7 @@ brew cask install nvalt
 brew cask install paparazzi
 brew cask install postico
 brew cask install qlstephen
+brew cask install rowanj-gitx
 brew cask install sequel-pro
 brew cask install selfcontrol
 brew cask install sitesucker
