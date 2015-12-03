@@ -6,7 +6,7 @@
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+# while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 ###############################################################################
 # General UI/UX                                                               #
@@ -134,6 +134,8 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 # SSD-specific tweaks                                                         #
 ###############################################################################
 
+echo "SSD"
+
 # Disable local Time Machine snapshots
 sudo tmutil disablelocal
 
@@ -213,7 +215,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/nul
 # defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots to the desktop
-defaults write com.apple.screencapture location -string "${HOME}/Downloads”
+defaults write com.apple.screencapture location -string "${HOME}/Downloads"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
@@ -230,6 +232,8 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
+
+echo "Finder"
 
 # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
 # defaults write com.apple.finder QuitMenuItem -bool true
@@ -438,6 +442,8 @@ sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulat
 # defaults write com.apple.dock wvous-bl-corner -int 5
 # defaults write com.apple.dock wvous-bl-modifier -int 0
 
+echo "Configuring various apps..."
+
 ###############################################################################
 # Safari & WebKit                                                             #
 ###############################################################################
@@ -477,9 +483,6 @@ defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 # Make Safari’s search banners default to Contains instead of Starts With
 defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 
-# Remove useless icons from Safari’s bookmarks bar
-defaults write com.apple.Safari ProxiesInBookmarksBar "()"
-
 # Enable the Develop menu and the Web Inspector in Safari
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
@@ -516,6 +519,8 @@ defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\
 ###############################################################################
 # Spotlight                                                                   #
 ###############################################################################
+
+echo "Spotlight"
 
 # Hide Spotlight tray-icon (and subsequent helper)
 #sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
@@ -564,6 +569,8 @@ sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Vol
 ###############################################################################
 # Terminal & iTerm 2                                                          #
 ###############################################################################
+
+echo "Terminal and iTerm 2"
 
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
@@ -630,6 +637,8 @@ defaults write com.apple.terminal StringEncodings -array 4
 # Time Machine                                                                #
 ###############################################################################
 
+echo "Time Machine"
+
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
@@ -639,6 +648,8 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 ###############################################################################
 # Activity Monitor                                                            #
 ###############################################################################
+
+echo "Activity Monitor"
 
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
@@ -656,6 +667,8 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 ###############################################################################
 # Address Book, Dashboard, iCal, TextEdit, and Disk Utility                   #
 ###############################################################################
+
+echo "Address Book, Dashboard, iCal, TextEdit and Disk Utility"
 
 # Enable the debug menu in Address Book
 defaults write com.apple.addressbook ABShowDebugMenu -bool true
@@ -680,6 +693,8 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 # Mac App Store                                                               #
 ###############################################################################
 
+echo "Mac App Store"
+
 # Enable the WebKit Developer Tools in the Mac App Store
 defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 
@@ -689,6 +704,8 @@ defaults write com.apple.appstore ShowDebugMenu -bool true
 ###############################################################################
 # Messages                                                                    #
 ###############################################################################
+
+echo "Messages"
 
 # Disable automatic emoji substitution (i.e. use plain text smileys)
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
@@ -702,6 +719,8 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 ###############################################################################
 # Google Chrome & Google Chrome Canary                                        #
 ###############################################################################
+
+echo "Google Chrome"
 
 # Allow installing user scripts via GitHub Gist or Userscripts.org
 defaults write com.google.Chrome ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
@@ -727,12 +746,16 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 # GPGMail 2                                                                   #
 ###############################################################################
 
+echo "GPGMail 2"
+
 # Disable signing emails by default
 # defaults write ~/Library/Preferences/org.gpgtools.gpgmail SignNewEmailsByDefault -bool false
 
 ###############################################################################
 # Opera & Opera Developer                                                     #
 ###############################################################################
+
+echo "Opera"
 
 # Expand the print dialog by default
 # defaults write com.operasoftware.Opera PMPrintingExpandedStateForPrint2 -boolean true
@@ -741,6 +764,8 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 ###############################################################################
 # SizeUp.app                                                                  #
 ###############################################################################
+
+echo "SizeUp"
 
 # Start SizeUp at login
 # defaults write com.irradiatedsoftware.SizeUp StartAtLogin -bool true
@@ -752,12 +777,16 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 # Sublime Text                                                                #
 ###############################################################################
 
+echo "Sublime Text"
+
 # Install Sublime Text settings
 # cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
 
 ###############################################################################
 # Transmission.app                                                            #
 ###############################################################################
+
+echo "Transmission"
 
 # Use `~/Documents/Torrents` to store incomplete downloads
 # defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
@@ -777,6 +806,8 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 ###############################################################################
 # Twitter.app                                                                 #
 ###############################################################################
+
+echo "Twitter"
 
 # Disable smart quotes as it’s annoying for code tweets
 defaults write com.twitter.twitter-mac AutomaticQuoteSubstitutionEnabled -bool false
@@ -803,12 +834,16 @@ defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
 # Tweetbot.app                                                                #
 ###############################################################################
 
+echo "Tweetbot"
+
 # Bypass the annoyingly slow t.co URL shortener
 # defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
 
 ###############################################################################
 # Spectacle.app                                                               #
 ###############################################################################
+
+echo "Spectacle"
 
 # Set up my preferred keyboard shortcuts
 # defaults write com.divisiblebyzero.Spectacle MakeLarger -data 62706c6973743030d40102030405061819582476657273696f6e58246f626a65637473592461726368697665725424746f7012000186a0a40708101155246e756c6cd4090a0b0c0d0e0d0f596d6f64696669657273546e616d65576b6579436f64655624636c6173731000800280035a4d616b654c6172676572d2121314155a24636c6173736e616d655824636c6173736573585a4b486f744b6579a21617585a4b486f744b6579584e534f626a6563745f100f4e534b657965644172636869766572d11a1b54726f6f74800108111a232d32373c424b555a62696b6d6f7a7f8a939c9fa8b1c3c6cb0000000000000101000000000000001c000000000000000000000000000000cd
@@ -837,6 +872,8 @@ defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
+
+echo "Killing affected applications"
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 	"Dock" "Finder" "Google Chrome" "Mail" "Messages" "Safari" "Spectacle" \
