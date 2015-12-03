@@ -39,3 +39,5 @@
   excludesfile = ~/.gitignore_global
 [rebase]
   autosquash = true
+[github]
+  user = garethrees
