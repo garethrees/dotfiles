@@ -28,6 +28,7 @@ nnoremap <C-H> <C-W><C-H>
 
 " Leader key
 let mapleader = ","
+inoremap § <esc>
 
 " NERDTree
 map <leader>n :NERDTreeToggle<CR>
