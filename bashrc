@@ -40,3 +40,6 @@ fi
 
 # Make less more friendly for non-text input files; see lesspipe(1)
 [[ -x $(which lesspipe) ]] && eval "$(SHELL=/bin/sh $(which lesspipe))"
+
+# added by travis gem
+[ -f /Users/gareth/.travis/travis.sh ] && source /Users/gareth/.travis/travis.sh
