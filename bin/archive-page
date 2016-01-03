@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#
+# Archive a single web URL
+# http://superuser.com/a/136335/123928
+
+wget -E -H -k -K -p $1
