@@ -4,6 +4,8 @@ set -e
 cd "$(dirname "$0")/.."
 DOTFILES_DIR=$(pwd)
 
+(exec "$DOTFILES_DIR/script/uninstall")
+
 for source in *; do
   target="$HOME/.$(basename "$source")"
   ln -sFv "$DOTFILES_DIR/$source" "$target"
