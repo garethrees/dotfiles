@@ -79,6 +79,12 @@ set ff=unix
 set splitbelow
 set splitright
 
+" Search
+" -----------------------------------------------------------------------------
+
+set incsearch " search as characters are entered
+set hlsearch " highlight matches
+
 " Plugins
 " -----------------------------------------------------------------------------
 
