@@ -6,9 +6,7 @@ DOTFILES_DIR=$(pwd)
 
 for source in *; do
   target="$HOME/.$(basename "$source")"
-  if [[ ! -L "$target" ]]; then
-    ln -sv "$DOTFILES_DIR/$source" "$target"
-  fi
+  ln -sFv "$DOTFILES_DIR/$source" "$target"
 done
 
 # Link binfiles
@@ -17,9 +15,7 @@ mkdir -pv $BIN_DIR
 
 for source in "$HOME/.bin/"*; do
   target="$BIN_DIR/$(basename "$source")"
-  if [[ ! -L "$target" ]]; then
-    ln -sv "$source" "$target"
-  fi
+  ln -sFv "$source" "$target"
 done
 
 source "$DOTFILES_DIR/script/install-user-bins.sh"
