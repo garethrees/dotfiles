@@ -33,5 +33,10 @@ fi
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+if [[ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]]
+  then
+    source /usr/local/opt/chruby/share/chruby/chruby.sh
+fi
+
 # Make less more friendly for non-text input files; see lesspipe(1)
 [[ -x $(which lesspipe) ]] && eval "$(SHELL=/bin/sh $(which lesspipe))"
