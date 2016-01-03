@@ -1,4 +1,5 @@
 alias ..='cd ..'
+alias be='bundle exec'
 alias df='df -kh'
 alias du='du -kh'
 alias grep='grep --color=auto'
