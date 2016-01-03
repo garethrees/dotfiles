@@ -11,5 +11,5 @@ fi
 # Install diff-highlight on OS X
 if [[ -f /usr/local/Library/LinkedKegs/git/share/git-core/contrib/diff-highlight/diff-highlight ]]
   then
-    ln -sf /usr/local/Library/LinkedKegs/git/share/git-core/contrib/diff-highlight/diff-highlight "$HOME/bin/diff-highlight"
+    ln -sfv /usr/local/Library/LinkedKegs/git/share/git-core/contrib/diff-highlight/diff-highlight "$HOME/bin/diff-highlight"
 fi
