@@ -51,6 +51,7 @@ syntax on
 set number
 set t_Co=256
 set laststatus=2 " Always show status bar
+set lazyredraw " redraw only when we need to.
 
 " Colours
 set background=dark
