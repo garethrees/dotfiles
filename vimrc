@@ -67,6 +67,7 @@ set nowritebackup
 
 " Show guideline for ideal width
 set cc=80
+set cursorline " highight current line
 
 " Focus display
 vnoremap za <Esc>`<kzfgg`>jzfG`<
