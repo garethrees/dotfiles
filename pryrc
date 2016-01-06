@@ -7,3 +7,16 @@ Pry.config.prompt = [
    "[#{pry.input_array.size}](#{Pry.view_clip(target_self)})#{":#{nest_level}" unless nest_level.zero?}* "
  }
 ]
+
+if defined?(Rails) && Rails.env
+  if defined?(Rails::ConsoleMethods)
+    include Rails::ConsoleMethods
+  else
+    def reload!(print=true)
+      puts "Reloading..." if print
+      ActionDispatch::Reloader.cleanup!
+      ActionDispatch::Reloader.prepare!
+      true
+    end
+  end
+end
