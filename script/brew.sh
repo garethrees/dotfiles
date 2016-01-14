@@ -11,6 +11,7 @@ fi
 brew update
 brew upgrade
 
+brew tap homebrew/dupes
 brew tap thoughtbot/formulae
 brew tap phinze/cask
 
@@ -41,6 +42,7 @@ brew install postgresql
 brew install prey
 brew install python
 brew install reattach-to-user-namespace
+brew install rsync
 brew install ruby-install
 brew install spark
 brew install sqlite
