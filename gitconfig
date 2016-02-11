@@ -30,9 +30,9 @@
   # e.g. git find #1234
   find = "!f() { git log --oneline | grep \"$@\"; }; f"
 [pager]
-  diff = diff-highlight | less
-  log  = diff-highlight | less
-  show = diff-highlight | less
+  diff = diff-so-fancy | less --tabs=1,5 -R
+  log  = diff-so-fancy | less --tabs=1,5 -R
+  show = diff-so-fancy | less --tabs=1,5 -R
 [color]
   ui = true
 [core]
