@@ -25,6 +25,7 @@ brew install coreutils
 brew install homebrew/science/datamash
 brew install git
 brew install thoughtbot/formulae/gitsh
+brew install --with-default-names gnu-sed
 brew install gtk+
 brew install heroku-toolbelt
 brew install imagemagick
