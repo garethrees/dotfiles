@@ -36,6 +36,7 @@
 [color]
   ui = true
 [color "diff"]
+  commit = magenta
   meta = yellow
 [core]
   excludesfile = ~/.gitignore_global
