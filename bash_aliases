@@ -16,3 +16,7 @@ alias openports='sudo lsof -i -P | grep -i "listen"'
 alias tree='tree -aC'
 alias untar='tar -zxvf'
 alias v='vagrant'
+
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+  alias "$method"="lwp-request -m '$method'"
+done
