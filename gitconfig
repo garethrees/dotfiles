@@ -43,3 +43,5 @@
   autosquash = true
 [github]
   user = garethrees
+[include]
+  path = ~/.gitconfig.local
