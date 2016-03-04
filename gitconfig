@@ -47,3 +47,6 @@
   user = garethrees
 [include]
   path = ~/.gitconfig.local
+[gitsh]
+	prompt = "%D %c%b%#%w"
+	noGreeting = true
