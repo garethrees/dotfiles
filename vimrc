@@ -79,6 +79,9 @@ set ff=unix
 set splitbelow
 set splitright
 
+" Make backspace work properly
+set backspace=indent,eol,start
+
 " Search
 " -----------------------------------------------------------------------------
 
