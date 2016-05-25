@@ -55,8 +55,8 @@ set laststatus=2 " Always show status bar
 set lazyredraw " redraw only when we need to.
 
 " Colours
-set background=dark
 colorscheme solarized
+set background=light
 
 " If the current iTerm tab has been
 " created using the **dark** profile:
