@@ -58,6 +58,18 @@ set lazyredraw " redraw only when we need to.
 set background=dark
 colorscheme solarized
 
+" If the current iTerm tab has been
+" created using the **dark** profile:
+if $ITERM_PROFILE == 'Solarized Dark'
+  set background=dark
+endif
+
+" If the current iTerm tab has been
+" created using the **light** profile:
+if $ITERM_PROFILE == 'Solarized Light'
+  set background=light
+endif
+
 " Clipboard
 set clipboard=unnamed
 set hidden " remember undo after quitting
