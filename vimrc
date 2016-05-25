@@ -45,6 +45,7 @@ set smartindent
 set expandtab
 set shiftwidth=2
 set tabstop=2
+set smarttab " smart tab handling for indenting
 
 " Interface
 syntax on
