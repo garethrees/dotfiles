@@ -84,6 +84,9 @@ set splitright
 " Make backspace work properly
 set backspace=indent,eol,start
 
+" Add angle brackets to match pairs (HTML)
+set matchpairs+=<:>
+
 " Search
 " -----------------------------------------------------------------------------
 
