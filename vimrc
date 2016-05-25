@@ -60,6 +60,7 @@ colorscheme solarized
 
 " Clipboard
 set clipboard=unnamed
+set hidden " remember undo after quitting
 
 " Stop background vim files being created
 set noswapfile
