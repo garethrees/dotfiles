@@ -90,8 +90,11 @@ set matchpairs+=<:>
 " Search
 " -----------------------------------------------------------------------------
 
+set ignorecase " case insensitive searching
+set smartcase " but become case sensitive if you type uppercase characters
 set incsearch " search as characters are entered
 set hlsearch " highlight matches
+set wrapscan " wrap-around search
 
 " Plugins
 " -----------------------------------------------------------------------------
