@@ -12,6 +12,13 @@ PATH="/usr/local/bin:$PATH"
 PATH="$HOME/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin
 
+# Log History
+BASH_HISTORY_LOG_DIR="$HOME/.bash_history_logs/"
+if [[ EUIr != 0 ]]; then
+  [[ -d $BASH_HISTORY_LOG_DIR ]] || mkdir $BASH_HISTORY_LOG_DIR
+  PROMPT_COMMAND='echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> $BASH_HISTORY_LOG_DIR/bash_history-$(date "+%Y-%m-%d").log'
+fi
+
 # Source global definitions
 [[ -f /etc/bashrc ]] && source /etc/bashrc
 [[ -f ~/.bash_prompt ]] && source ~/.bash_prompt
