@@ -29,6 +29,8 @@ fi
 [[ -f ~/.script/tmuxinator.bash ]] && source ~/.script/tmuxinator.bash
 
 # Extras
+[[ -f ~/.script/man_color.sh ]] && source ~/.script/man_color.sh
+
 if [[ -d /usr/local/var/rbenv ]]
   then
     export RBENV_ROOT=/usr/local/var/rbenv
