@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+if test -z "$1"
+then
+  echo "You must provide a CSV file"
+  exit 1
+fi
+
+column -s, -t < "$1" | less -#2 -N -S
