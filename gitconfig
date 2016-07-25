@@ -6,6 +6,7 @@
   ap = add -p
   cbr = rev-parse --abbrev-ref HEAD # current branch
   cm = commit -v
+  cma = commit --amend
   co = checkout
   cp = cherry-pick
   d  = diff
