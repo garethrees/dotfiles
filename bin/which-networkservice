@@ -8,13 +8,17 @@ set -e
 services=$(networksetup -listnetworkserviceorder | grep 'Hardware Port' | tac)
 
 while read line; do
+  #echo "LINE: $line"
+
   sname=$(echo $line | awk -F  "(, )|(: )|[)]" '{print $2}')
   sdev=$(echo $line | awk -F  "(, )|(: )|[)]" '{print $4}')
   #echo "[CURRENT SERVICE] NAME: $sname, SDEV: $sdev, CURRENT: $currentservice"
+
   if [ -n "$sdev" ]; then
-    ifconfig $sdev 2>/dev/null | grep 'status: active' > /dev/null 2>&1
-    rc="$?"
-    if [ "$rc" -eq 0 ]; then
+    #echo "SDEV $sdev"
+
+    if ifconfig $sdev 2>/dev/null | grep 'status: active' > /dev/null 2>&1; then
+      #echo "CURRENT: $sdev"
       currentservice="$sname"
     fi
   fi
