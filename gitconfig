@@ -11,6 +11,7 @@
   cp = cherry-pick
   d  = diff
   ds = diff --staged
+  fl = log -u
   fo = fetch origin -p
   la = log --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cblue(%an)%Creset' --decorate --numstat
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(blue)(%an <%ae>)%Creset' --abbrev-commit --date=relative
