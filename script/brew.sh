@@ -55,15 +55,18 @@ brew install wget --enable-iri
 
 brew cask install alfred
 brew cask install apptrap
+brew cask install java # Required for arduino below
+brew cask install arduino
 brew cask install carbon-copy-cloner
-brew cask install cyberghost
+brew cask install cyberduck
 brew cask install dropbox
-brew cask install flux
 brew cask install firefox
+brew cask install flux
 brew cask install google-chrome
 brew cask install iterm2
 brew cask install jdiskreport
 brew cask install karabiner
+brew cask install kindle
 brew cask install licecap
 brew cask install monolingual
 brew cask install nvalt
@@ -71,18 +74,24 @@ brew cask install paparazzi
 brew cask install postico
 brew cask install qlstephen
 brew cask install rowanj-gitx
-brew cask install sequel-pro
 brew cask install selfcontrol
+brew cask install sequel-pro
+#brew cask install simplenote – unavailable
 brew cask install sitesucker
 brew cask install sketchup
 brew cask install skype
+#brew cask install sparrow – unavailable
 brew cask install spectacle
 brew cask install spotify
+brew cask install steam
 brew cask install textmate
 brew cask install the-unarchiver
+brew cask install transmission
+brew cask install tunnelblick
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install vlc
+brew cask install wireshark
 brew cask install xquartz
 
 brew cleanup
