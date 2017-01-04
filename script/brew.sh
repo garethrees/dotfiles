@@ -94,6 +94,7 @@ brew install reattach-to-user-namespace
 brew install rsync
 brew install ruby
 brew install ruby-install
+brew install shared-mime-info
 brew install spark
 brew install sqlite
 brew install ssh-copy-id
