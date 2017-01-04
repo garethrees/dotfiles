@@ -16,7 +16,6 @@ brew tap thoughtbot/formulae
 brew tap phinze/cask
 
 brew install ack
-brew install apptrap
 brew install automake
 brew install caskroom/cask/brew-cask
 brew install chruby
@@ -55,6 +54,7 @@ brew install vim
 brew install wget --enable-iri
 
 brew cask install alfred
+brew cask install apptrap
 brew cask install carbon-copy-cloner
 brew cask install cyberghost
 brew cask install dropbox
