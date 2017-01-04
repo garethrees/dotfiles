@@ -11,6 +11,8 @@ export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 PATH="/usr/local/bin:$PATH"
 PATH="$HOME/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin
+export GOPATH="$HOME/go"
+PATH=$GOPATH/bin:$PATH
 
 # Log History
 BASH_HISTORY_LOG_DIR="$HOME/.bash_history_logs/"
