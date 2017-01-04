@@ -39,7 +39,6 @@ brew install nmap
 brew install node
 brew install ossp-uuid
 brew install postgresql
-brew install prey
 brew install python
 brew install reattach-to-user-namespace
 brew install rsync
@@ -72,6 +71,7 @@ brew cask install monolingual
 brew cask install nvalt
 brew cask install paparazzi
 brew cask install postico
+brew cask install prey # Needs API_KEY env var set
 brew cask install qlstephen
 brew cask install rowanj-gitx
 brew cask install selfcontrol
