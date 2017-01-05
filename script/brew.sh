@@ -111,6 +111,7 @@ brew cask install alfred
 brew cask install apptrap
 brew cask install java # Required for arduino below
 brew cask install arduino
+brew cask install ax88179 # Restart required
 brew cask install carbon-copy-cloner
 brew cask install cyberduck
 brew cask install dropbox
