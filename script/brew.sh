@@ -136,6 +136,7 @@ brew cask install sequel-pro
 brew cask install sitesucker
 brew cask install sketchup
 brew cask install skype
+brew cask install slack
 #brew cask install sparrow – unavailable
 brew cask install spectacle
 brew cask install spotify
