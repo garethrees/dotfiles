@@ -114,6 +114,10 @@ set wrapscan " wrap-around search
 
 Bundle 'gmarik/vundle'
 
+" Colours
+Bundle 'altercation/vim-colors-solarized'
+
+" Functionality
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-surround'
