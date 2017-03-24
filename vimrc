@@ -118,10 +118,10 @@ Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 
 " Functionality
+Bundle 'tpope/vim-rails.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-rails.git'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'ddollar/nerdcommenter'
 Bundle 'tpope/vim-fugitive'
