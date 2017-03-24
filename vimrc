@@ -56,8 +56,8 @@ set lazyredraw " redraw only when we need to.
 
 " Colours
 colorscheme solarized
-"set background=light
-set background=dark
+set background=light
+"set background=dark
 
 " If the current iTerm tab has been
 " created using the **dark** profile:
