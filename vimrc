@@ -128,6 +128,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'mileszs/ack.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'myusuf3/numbers.vim'
+Bundle 'Raimondi/delimitMate'
 
 " TextMate Snippets
 Bundle 'MarcWeber/vim-addon-mw-utils'
