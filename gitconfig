@@ -7,7 +7,7 @@
   bd = branch -d
   cbr = rev-parse --abbrev-ref HEAD # current branch
   cm = commit -v
-  cma = commit --amend
+  cma = commit -v --amend
   co = checkout
   cp = cherry-pick
   d  = diff
