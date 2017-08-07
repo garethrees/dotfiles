@@ -26,6 +26,7 @@
   ri = rebase -i
   s  = stash
   sa = stash apply
+  search = log --pretty=format:'%Cred%h %Creset%s %Cblue(%an <%ae>)%Creset' --all --grep
   sl = stash list
   sp = stash pop
   st = status -s
