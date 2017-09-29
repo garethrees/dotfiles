@@ -37,6 +37,9 @@ map <leader>n :NERDTreeToggle<CR>
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>
 
+" Toggle folds
+nnoremap <Space> za
+
 " General Settings
 " -----------------------------------------------------------------------------
 
@@ -99,6 +102,10 @@ set backspace=indent,eol,start
 
 " Add angle brackets to match pairs (HTML)
 set matchpairs+=<:>
+
+" Folding
+set foldmethod=syntax
+set foldlevelstart=99
 
 " Search
 " -----------------------------------------------------------------------------
