@@ -150,6 +150,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'Raimondi/delimitMate'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-repeat'
 
 " TextMate Snippets
 Bundle 'MarcWeber/vim-addon-mw-utils'
