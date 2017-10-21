@@ -9,18 +9,21 @@ call vundle#rc()
 " Key mappings
 " -----------------------------------------------------------------------------
 
-" Disable arrow keys
+" Disable arrow keys in normal mode
 map <Up> <NOP>
 map <Down> <NOP>
 map <Left> <NOP>
 map <Right> <NOP>
 
+" Disable arrow keys in insert mode
 imap <Up> <NOP>
 imap <Down> <NOP>
 imap <Left> <NOP>
 imap <Right> <NOP>
 
 " Split navigation
+" By default Ctrl + W then Ctrl + DIRECTION
+" This makes it just Ctrl + DIRECTION
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -28,6 +31,8 @@ nnoremap <C-H> <C-W><C-H>
 
 " Leader key
 let mapleader = ","
+
+" § is left of 1 on UK Keyboards. Make it function as escape
 inoremap § <esc>
 
 " NERDTree
@@ -60,23 +65,22 @@ set lazyredraw " redraw only when we need to.
 " Colours
 colorscheme solarized
 set background=light
-"set background=dark
 
-" If the current iTerm tab has been
-" created using the **dark** profile:
+" Attempt to set colour scheme based on iTerm profile
 if $ITERM_PROFILE == 'Solarized Dark'
+  " If the current iTerm tab has been
+  " created using the **dark** profile:
   set background=dark
-endif
-
-" If the current iTerm tab has been
-" created using the **light** profile:
-if $ITERM_PROFILE == 'Solarized Light'
+elseif $ITERM_PROFILE == 'Solarized Light'
+  " If the current iTerm tab has been
+  " created using the **light** profile:
   set background=light
 endif
 
 " Clipboard
 set clipboard=unnamed
-set hidden " remember undo after quitting
+" remember undo after quitting
+set hidden
 
 " Stop background vim files being created
 set noswapfile
@@ -85,7 +89,8 @@ set nowritebackup
 
 " Show guideline for ideal width
 set cc=80
-set cursorline " highight current line
+" highight current line
+set cursorline
 
 " Focus display
 vnoremap za <Esc>`<kzfgg`>jzfG`<
@@ -110,11 +115,16 @@ set foldlevelstart=99
 " Search
 " -----------------------------------------------------------------------------
 
-set ignorecase " case insensitive searching
-set smartcase " but become case sensitive if you type uppercase characters
-set incsearch " search as characters are entered
-set hlsearch " highlight matches
-set wrapscan " wrap-around search
+" case insensitive searching
+set ignorecase
+" but become case sensitive if you type uppercase characters
+set smartcase
+" search as characters are entered
+set incsearch
+" highlight matches
+set hlsearch
+" wrap-around search
+set wrapscan
 
 " Plugins
 " -----------------------------------------------------------------------------
