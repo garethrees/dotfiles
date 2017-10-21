@@ -36,6 +36,7 @@ brew install emacs
 brew install exercism
 brew install fontconfig
 brew install freetype
+brew install fzf
 brew install gd
 brew install gdbm
 brew install gdk-pixbuf
