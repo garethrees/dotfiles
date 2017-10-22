@@ -35,15 +35,21 @@ let mapleader = ","
 " § is left of 1 on UK Keyboards. Make it function as escape
 inoremap § <esc>
 
-" NERDTree
-map <leader>n :NERDTreeToggle<CR>
-
 " Enter / Shift + Enter for empty newlines
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>
 
 " Toggle folds
 nnoremap <Space> za
+
+" NERDTree
+map <leader>t :NERDTreeToggle<CR>
+" Toggle line numbers
+nmap <leader>n :set number!<CR>
+" Toggle paste mode
+nmap <leader>p :set paste!<CR>
+" Toggle search highlight
+nmap <leader>l :nohlsearch<CR>
 
 " General Settings
 " -----------------------------------------------------------------------------
