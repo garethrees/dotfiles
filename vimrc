@@ -83,6 +83,12 @@ nmap <leader>n :set number!<CR>
 nmap <leader>p :set paste!<CR>
 " Toggle search highlight
 nmap <leader>l :nohlsearch<CR>
+" Ctrl-p for fzf to mirror Ctrl-p behaviour
+map <C-p> :Files<CR>
+" vim-gitgutter hunk add
+nmap <Leader>ha <Plug>GitGutterStageHunk
+" vim-gitgutter hunk revert
+nmap <Leader>hr <Plug>GitGutterUndoHunk
 
 " General Settings
 " -----------------------------------------------------------------------------
