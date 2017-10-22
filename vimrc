@@ -6,6 +6,38 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
+" Plugins
+" -----------------------------------------------------------------------------
+
+Bundle 'gmarik/vundle'
+
+" Colours
+Bundle 'altercation/vim-colors-solarized'
+
+" Functionality
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails.git'
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-surround'
+Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'ddollar/nerdcommenter'
+Bundle 'mileszs/ack.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'myusuf3/numbers.vim'
+Bundle 'Raimondi/delimitMate'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-repeat'
+Plugin 'docunext/closetag.vim'
+
+" TextMate Snippets
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
+
+filetype plugin indent on
+
 " Key mappings
 " -----------------------------------------------------------------------------
 
@@ -134,38 +166,6 @@ set incsearch
 set hlsearch
 " wrap-around search
 set wrapscan
-
-" Plugins
-" -----------------------------------------------------------------------------
-
-Bundle 'gmarik/vundle'
-
-" Colours
-Bundle 'altercation/vim-colors-solarized'
-
-" Functionality
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails.git'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-surround'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'ddollar/nerdcommenter'
-Bundle 'mileszs/ack.vim'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'myusuf3/numbers.vim'
-Bundle 'Raimondi/delimitMate'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-repeat'
-Plugin 'docunext/closetag.vim'
-
-" TextMate Snippets
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-
-filetype plugin indent on
 
 " Always show gitgutter – annoying that it moves around all the time
 if exists('&signcolumn')  " Vim 7.4.2201
