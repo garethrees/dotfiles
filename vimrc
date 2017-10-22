@@ -165,3 +165,10 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 
 filetype plugin indent on
+
+" Always show gitgutter – annoying that it moves around all the time
+if exists('&signcolumn')  " Vim 7.4.2201
+  set signcolumn=yes
+else
+  let g:gitgutter_sign_column_always = 1
+endif
