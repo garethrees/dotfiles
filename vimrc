@@ -9,32 +9,32 @@ call vundle#rc()
 " Plugins
 " -----------------------------------------------------------------------------
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " Colours
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 
 " Functionality
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails.git'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-surround'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'ddollar/nerdcommenter'
-Bundle 'mileszs/ack.vim'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'myusuf3/numbers.vim'
-Bundle 'Raimondi/delimitMate'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails.git'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-surround'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ddollar/nerdcommenter'
+Plugin 'mileszs/ack.vim'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'myusuf3/numbers.vim'
+Plugin 'Raimondi/delimitMate'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-repeat'
 Plugin 'docunext/closetag.vim'
 
 " TextMate Snippets
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 
 filetype plugin indent on
 
