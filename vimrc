@@ -20,7 +20,6 @@ Plugin 'tpope/vim-rails.git'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-surround'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ddollar/nerdcommenter'
 Plugin 'mileszs/ack.vim'
 Plugin 'Lokaltog/vim-powerline'
@@ -29,6 +28,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-repeat'
 Plugin 'docunext/closetag.vim'
+Plugin 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
 
 " TextMate Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'

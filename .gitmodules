@@ -4,3 +4,9 @@
 [submodule "vim/bundle/closetag.vim"]
 	path = vim/bundle/closetag.vim
 	url = git@github.com:airblade/vim-gitgutter.git
+[submodule "vim/bundle/fzf"]
+	path = vim/bundle/fzf
+	url = git@github.com:junegunn/fzf.git
+[submodule "vim/bundle/fzf.vim"]
+	path = vim/bundle/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git
