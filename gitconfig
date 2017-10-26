@@ -5,6 +5,7 @@
   a  = add
   ap = add -p
   bd = branch -d
+  bD = branch -D
   cbr = rev-parse --abbrev-ref HEAD # current branch
   cm = commit -v
   cma = commit -v --amend
