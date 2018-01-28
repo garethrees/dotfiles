@@ -31,6 +31,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'docunext/closetag.vim'
 Plugin 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
+Plugin 'Konfekt/FastFold'
 
 " TextMate Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -159,6 +160,13 @@ set matchpairs+=<:>
 " Folding
 set foldmethod=syntax
 set foldlevelstart=99
+
+" FastFold settings
+nmap zuz <Plug>(FastFoldUpdate)
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
+let g:ruby_fold = 1
 
 " Faster updates (Mainly for git-gutter. Default is 4s)
 set updatetime=250
