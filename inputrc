@@ -4,3 +4,9 @@ set convert-meta off
 
 "\e[1;5D": backward-word
 "\e[1;5C": forward-word
+
+# https://coderwall.com/p/oqtj8w/the-single-most-useful-thing-in-bash
+# Search history anchored on start of command line
+# e.g. `$ cd` UP, UP, UP, RETURN
+"\e[A": history-search-backward
+"\e[B": history-search-forward
