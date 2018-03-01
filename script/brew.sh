@@ -118,6 +118,7 @@ brew cask install cyberduck
 brew cask install dropbox
 brew cask install firefox
 brew cask install flux
+brew cask install gmvault
 brew cask install google-chrome
 brew cask install iterm2
 brew cask install jdiskreport
