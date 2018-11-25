@@ -2,5 +2,5 @@
 #
 # Archive a single web URL
 # http://superuser.com/a/136335/123928
-
+# wget --adjust-extension --span-hosts --convert-links --backup-converted --page-requisites $1
 wget -E -H -k -K -p $1
