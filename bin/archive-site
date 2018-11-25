@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#
+# Archive an entire website
+# https://www.guyrutenberg.com/2014/05/02/make-offline-mirror-of-a-site-using-wget/
+# http://www.dheinemann.com/2011/archiving-with-wget/
+# https://www.petekeen.net/archiving-websites-with-wget
+# https://www.archiveteam.org/index.php/Wget
+wget \
+  --mirror \
+  --continue \
+  --convert-links \
+  --adjust-extension \
+  --page-requisites \
+  --no-parent \
+  --user-agent="" \
+  -e robots=off \
+  --wait 1 \
+  $1
