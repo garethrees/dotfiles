@@ -124,6 +124,10 @@ elseif $ITERM_PROFILE == 'Solarized Light'
   set background=light
 endif
 
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
 " Clipboard
 set clipboard=unnamed
 " remember undo after quitting
