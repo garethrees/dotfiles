@@ -20,6 +20,7 @@ brew install homebrew/science/datamash
 brew install thoughtbot/formulae/gitsh
 
 brew install ack
+brew install ag
 brew install atk
 brew install autoconf
 brew install automake
@@ -101,6 +102,7 @@ brew install sqlite
 brew install ssh-copy-id
 brew install st
 brew install tldr
+brew install the_silver_searcher
 brew install tmux
 brew install tree
 brew install vim

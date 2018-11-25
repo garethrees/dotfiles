@@ -91,6 +91,9 @@ map <C-p> :Files<CR>
 nmap <Leader>ha <Plug>GitGutterStageHunk
 " vim-gitgutter hunk revert
 nmap <Leader>hr <Plug>GitGutterUndoHunk
+" Ack
+nmap <Leader>a :Ack!
+nmap <Leader>s :call Search("")<left><left>
 
 " General Settings
 " -----------------------------------------------------------------------------
@@ -195,6 +198,23 @@ if exists('&signcolumn')  " Vim 7.4.2201
 else
   let g:gitgutter_sign_column_always = 1
 endif
+
+" Use ag with ack.vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" Fix searches leaking in to terminal output
+" https://github.com/mileszs/ack.vim/issues/18
+function Search(string) abort
+  let saved_shellpipe = &shellpipe
+  let &shellpipe = '>'
+  try
+    execute 'Ack!' shellescape(a:string, 1)
+  finally
+    let &shellpipe = saved_shellpipe
+  endtry
+endfunction
 
 " Solarized theme for Airline
 let g:airline_theme='solarized'
