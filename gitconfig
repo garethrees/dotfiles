@@ -6,6 +6,7 @@
   ap = add -p
   bd = branch -d
   bD = branch -D
+  bm = branch -m
   cbr = rev-parse --abbrev-ref HEAD # current branch
   cm = commit -v
   cma = commit -v --amend
@@ -14,12 +15,14 @@
   d  = diff
   ds = diff --staged
   fl = log -u
+  fg = fetch github -p
   fo = fetch origin -p
   la = log --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cblue(%an)%Creset' --decorate --numstat
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(blue)(%an <%ae>)%Creset' --abbrev-commit --date=relative
   ll = log --pretty=format:'%Cred%h %Creset%s %Cblue(%an <%ae>)%Creset' -n 15
   lp = log -p
   ls = log --pretty=format:'%Cred%h %Creset%s %Cblue(%an <%ae>)%Creset' -n 5
+  m  = merge
   p  = push
   po = push origin
   r  = rebase
