@@ -33,6 +33,9 @@ Plugin 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'Konfekt/FastFold'
 
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'jgdavey/tslime.vim'
+
 " TextMate Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -94,6 +97,15 @@ nmap <Leader>hr <Plug>GitGutterUndoHunk
 " Ack
 nmap <Leader>a :Ack!
 nmap <Leader>s :call Search("")<left><left>
+
+" Run specs from Vim via Tmux
+let g:rspec_command = 'call Send_to_Tmux("bin/rspec {spec}\n")'
+
+" vim-rspec mappings
+map <Leader>T :call RunCurrentSpecFile()<CR>
+map <Leader>S :call RunNearestSpec()<CR>
+map <Leader>L :call RunLastSpec()<CR>
+map <Leader>A :call RunAllSpecs()<CR>
 
 " General Settings
 " -----------------------------------------------------------------------------
