@@ -107,6 +107,9 @@ map <Leader>S :call RunNearestSpec()<CR>
 map <Leader>L :call RunLastSpec()<CR>
 map <Leader>A :call RunAllSpecs()<CR>
 
+" Switch between the last two files
+nnoremap <Leader><Leader> <C-^>
+
 " General Settings
 " -----------------------------------------------------------------------------
 
