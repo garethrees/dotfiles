@@ -17,7 +17,6 @@ Plugin 'altercation/vim-colors-solarized'
 " Functionality
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails.git'
-Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-surround'
 Plugin 'ddollar/nerdcommenter'
@@ -80,8 +79,6 @@ map <S-Enter> O<ESC>
 " Toggle folds
 nnoremap <Space> za
 
-" NERDTree
-map <leader>t :NERDTreeToggle<CR>
 " Toggle line numbers
 nmap <leader>n :set number!<CR>
 " Toggle paste mode
