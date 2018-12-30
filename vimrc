@@ -31,6 +31,8 @@ Plugin 'docunext/closetag.vim'
 Plugin 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'Konfekt/FastFold'
+Plugin 'tmhedberg/matchit'
+Plugin 'jgdavey/vim-blockle'
 
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'jgdavey/tslime.vim'
