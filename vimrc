@@ -135,11 +135,11 @@ colorscheme solarized
 set background=light
 
 " Attempt to set colour scheme based on iTerm profile
-if $ITERM_PROFILE == 'Solarized Dark'
+if $ITERM_PROFILE == 'solarized_dark'
   " If the current iTerm tab has been
   " created using the **dark** profile:
   set background=dark
-elseif $ITERM_PROFILE == 'Solarized Light'
+elseif $ITERM_PROFILE == 'solarized_light'
   " If the current iTerm tab has been
   " created using the **light** profile:
   set background=light
