@@ -181,6 +181,10 @@ set matchpairs+=<:>
 " Folding
 set foldmethod=syntax
 set foldlevelstart=99
+" Limit fold nesting (default is 20)
+set foldnestmax=8
+" Quicker syntax-based folding
+set regexpengine=1
 
 " FastFold settings
 nmap zuz <Plug>(FastFoldUpdate)
