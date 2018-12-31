@@ -129,6 +129,8 @@ set number
 set t_Co=256
 set laststatus=2 " Always show status bar
 set lazyredraw " redraw only when we need to.
+" Disable expensive ruby highlighting
+let ruby_no_expensive=1
 
 " Colours
 colorscheme solarized
