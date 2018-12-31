@@ -6,6 +6,9 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
+" Explicitly set ruby path for faster lookup
+let g:ruby_path="/usr/bin/ruby"
+
 " Plugins
 " -----------------------------------------------------------------------------
 
