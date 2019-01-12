@@ -34,6 +34,8 @@ fi
 # Extras
 [[ -f ~/.script/man_color.sh ]] && source ~/.script/man_color.sh
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
+# added by travis gem
+[[ -f ~/.travis/travis.sh ]] && source ~/.travis/travis.sh
 
 if [[ -d /usr/local/var/rbenv ]]
   then
@@ -54,6 +56,3 @@ fi
 
 # Make less more friendly for non-text input files; see lesspipe(1)
 [[ -x $(which lesspipe) ]] && eval "$(SHELL=/bin/sh $(which lesspipe))"
-
-# added by travis gem
-[ -f /Users/gareth/.travis/travis.sh ] && source /Users/gareth/.travis/travis.sh
