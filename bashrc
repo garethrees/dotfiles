@@ -33,6 +33,7 @@ fi
 
 # Extras
 [[ -f ~/.script/man_color.sh ]] && source ~/.script/man_color.sh
+[[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 
 if [[ -d /usr/local/var/rbenv ]]
   then
