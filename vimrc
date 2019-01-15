@@ -179,6 +179,9 @@ endfunction
 " Solarized theme for Airline
 let g:airline_theme='solarized'
 
+" Run specs from Vim via Tmux
+let g:rspec_command = 'call Send_to_Tmux("bin/rspec {spec}\n")'
+
 " Key mappings
 " -----------------------------------------------------------------------------
 
@@ -230,9 +233,6 @@ nmap <Leader>hr <Plug>GitGutterUndoHunk
 " Ack
 nmap <Leader>a :Ack!
 nmap <Leader>s :call Search("")<left><left>
-
-" Run specs from Vim via Tmux
-let g:rspec_command = 'call Send_to_Tmux("bin/rspec {spec}\n")'
 
 " vim-rspec mappings
 map <Leader>T :call RunCurrentSpecFile()<CR>
