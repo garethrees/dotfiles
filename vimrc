@@ -104,9 +104,6 @@ set cursorline
 " Slightly shorter line-length for commit messages
 autocmd Filetype gitcommit setlocal spell textwidth=72 cc=72
 
-" Focus display
-vnoremap za <Esc>`<kzfgg`>jzfG`<
-
 " ensure unix line endings
 set ff=unix
 
