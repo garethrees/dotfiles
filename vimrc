@@ -194,6 +194,10 @@ imap <Down> <NOP>
 imap <Left> <NOP>
 imap <Right> <NOP>
 
+" Navigate up and down lines as shown on the _screen_
+nmap j gj
+nmap k gk
+
 " Split navigation
 " By default Ctrl + W then Ctrl + DIRECTION
 " This makes it just Ctrl + DIRECTION
