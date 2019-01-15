@@ -49,70 +49,6 @@ Plugin 'honza/vim-snippets'
 
 filetype plugin indent on
 
-" Key mappings
-" -----------------------------------------------------------------------------
-
-" Disable arrow keys in normal mode
-map <Up> <NOP>
-map <Down> <NOP>
-map <Left> <NOP>
-map <Right> <NOP>
-
-" Disable arrow keys in insert mode
-imap <Up> <NOP>
-imap <Down> <NOP>
-imap <Left> <NOP>
-imap <Right> <NOP>
-
-" Split navigation
-" By default Ctrl + W then Ctrl + DIRECTION
-" This makes it just Ctrl + DIRECTION
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-" Leader key
-let mapleader = ","
-
-" § is left of 1 on UK Keyboards. Make it function as escape
-inoremap § <esc>
-
-" Enter / Shift + Enter for empty newlines
-map <Enter> o<ESC>
-map <S-Enter> O<ESC>
-
-" Toggle folds
-nnoremap <Space> za
-
-" Toggle line numbers
-nmap <leader>n :set number!<CR>
-" Toggle paste mode
-nmap <leader>p :set paste!<CR>
-" Toggle search highlight
-nmap <leader>l :nohlsearch<CR>
-" Ctrl-p for fzf to mirror Ctrl-p behaviour
-map <C-p> :Files<CR>
-" vim-gitgutter hunk add
-nmap <Leader>ha <Plug>GitGutterStageHunk
-" vim-gitgutter hunk revert
-nmap <Leader>hr <Plug>GitGutterUndoHunk
-" Ack
-nmap <Leader>a :Ack!
-nmap <Leader>s :call Search("")<left><left>
-
-" Run specs from Vim via Tmux
-let g:rspec_command = 'call Send_to_Tmux("bin/rspec {spec}\n")'
-
-" vim-rspec mappings
-map <Leader>T :call RunCurrentSpecFile()<CR>
-map <Leader>S :call RunNearestSpec()<CR>
-map <Leader>L :call RunLastSpec()<CR>
-map <Leader>A :call RunAllSpecs()<CR>
-
-" Switch between the last two files
-nnoremap <Leader><Leader> <C-^>
-
 " General Settings
 " -----------------------------------------------------------------------------
 
@@ -242,3 +178,67 @@ endfunction
 
 " Solarized theme for Airline
 let g:airline_theme='solarized'
+
+" Key mappings
+" -----------------------------------------------------------------------------
+
+" Disable arrow keys in normal mode
+map <Up> <NOP>
+map <Down> <NOP>
+map <Left> <NOP>
+map <Right> <NOP>
+
+" Disable arrow keys in insert mode
+imap <Up> <NOP>
+imap <Down> <NOP>
+imap <Left> <NOP>
+imap <Right> <NOP>
+
+" Split navigation
+" By default Ctrl + W then Ctrl + DIRECTION
+" This makes it just Ctrl + DIRECTION
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Leader key
+let mapleader = ","
+
+" § is left of 1 on UK Keyboards. Make it function as escape
+inoremap § <esc>
+
+" Enter / Shift + Enter for empty newlines
+map <Enter> o<ESC>
+map <S-Enter> O<ESC>
+
+" Toggle folds
+nnoremap <Space> za
+
+" Toggle line numbers
+nmap <leader>n :set number!<CR>
+" Toggle paste mode
+nmap <leader>p :set paste!<CR>
+" Toggle search highlight
+nmap <leader>l :nohlsearch<CR>
+" Ctrl-p for fzf to mirror Ctrl-p behaviour
+map <C-p> :Files<CR>
+" vim-gitgutter hunk add
+nmap <Leader>ha <Plug>GitGutterStageHunk
+" vim-gitgutter hunk revert
+nmap <Leader>hr <Plug>GitGutterUndoHunk
+" Ack
+nmap <Leader>a :Ack!
+nmap <Leader>s :call Search("")<left><left>
+
+" Run specs from Vim via Tmux
+let g:rspec_command = 'call Send_to_Tmux("bin/rspec {spec}\n")'
+
+" vim-rspec mappings
+map <Leader>T :call RunCurrentSpecFile()<CR>
+map <Leader>S :call RunNearestSpec()<CR>
+map <Leader>L :call RunLastSpec()<CR>
+map <Leader>A :call RunAllSpecs()<CR>
+
+" Switch between the last two files
+nnoremap <Leader><Leader> <C-^>
