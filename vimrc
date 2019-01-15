@@ -208,6 +208,11 @@ let mapleader = ","
 " § is left of 1 on UK Keyboards. Make it function as escape
 inoremap § <esc>
 
+" Scroll quickfix without switching from main pane, opening each file in the
+" main window as you go. Useful for ag-based find in project.
+nnoremap <C-j> :cnext<cr>
+nnoremap <C-k> :cprev<cr>
+
 " Enter / Shift + Enter for empty newlines
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>
