@@ -198,6 +198,19 @@ imap <Right> <NOP>
 nmap j gj
 nmap k gk
 
+" Use Emacs-style movement keys in command mode
+cnoremap <C-a>  <Home>
+cnoremap <C-b>  <Left>
+cnoremap <C-f>  <Right>
+cnoremap <C-d>  <Delete>
+cnoremap <M-b>  <S-Left>
+cnoremap <M-f>  <S-Right>
+cnoremap <M-d>  <S-right><Delete>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
+cnoremap <Esc>d <S-right><Delete>
+cnoremap <C-g>  <C-c>
+
 " Split navigation
 " By default Ctrl + W then Ctrl + DIRECTION
 " This makes it just Ctrl + DIRECTION
