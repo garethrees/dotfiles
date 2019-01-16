@@ -245,6 +245,8 @@ nmap <leader>p :set paste!<CR>
 nmap <leader>l :nohlsearch<CR>
 " Ctrl-p for fzf to mirror Ctrl-p behaviour
 map <C-p> :Files<CR>
+" fzf buffers
+nmap <leader>b :Buffers<CR>
 " vim-gitgutter hunk add
 nmap <Leader>ha <Plug>GitGutterStageHunk
 " vim-gitgutter hunk revert
