@@ -31,6 +31,8 @@
   s  = stash
   sa = stash apply
   search = log --pretty=format:'%Cred%h %Creset%s %Cblue(%an <%ae>)%Creset' --all --grep
+  sf = showfiles
+  showfiles = show --stat --oneline
   sl = stash list
   sp = stash pop
   st = status -s
