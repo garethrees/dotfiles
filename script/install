@@ -22,3 +22,4 @@ done
 
 source "$DOTFILES_DIR/script/install-user-bins.sh"
 source "$DOTFILES_DIR/script/install-launch-agents.sh"
+source "$DOTFILES_DIR/script/install-services.sh"
