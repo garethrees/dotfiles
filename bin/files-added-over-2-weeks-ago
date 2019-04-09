@@ -1,0 +1,23 @@
+#!/bin/sh
+
+command -v mdls >/dev/null 2>&1 || { echo >&2 "I require mdls but it's not installed. Aborting."; exit 1; }
+command -v gdate >/dev/null 2>&1 || { echo >&2 "I require gdate but it's not installed. Aborting."; exit 1; }
+
+list_added_over_two_weeks_ago() {
+  two_weeks_ago=`gdate -d "-2 weeks" --rfc-3339=date`
+
+  for file in $1/*; do
+    date_added=`mdls -raw -name kMDItemDateAdded "$file" | cut -d ' ' -f 1`
+
+    if [[ $date_added < $two_weeks_ago ]];
+    then
+      printf "%s\n" "$file"
+    fi
+  done
+}
+
+if [[ $# -gt 0 ]]; then
+  list_added_over_two_weeks_ago "$1"
+else
+  list_added_over_two_weeks_ago "."
+fi
