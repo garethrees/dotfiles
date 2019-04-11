@@ -1,0 +1,16 @@
+#!/bin/sh
+
+count_file_extensions() {
+  find $1 -type f -maxdepth 1 |
+    sed -e '/.*\/[^\/]*\.[^\/]*$/!s/.*/(none)/' -e 's/.*\.//' |
+    tr '[:upper:]' '[:lower:]' |
+    LC_COLLATE=C sort |
+    uniq -c |
+    sort -r
+}
+
+if [[ $# -gt 0 ]]; then
+  count_file_extensions "$1"
+else
+  count_file_extensions "."
+fi
