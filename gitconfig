@@ -22,6 +22,9 @@
   ll = log --pretty=format:'%Cred%h %Creset%s %Cblue(%an <%ae>)%Creset' -n 15
   lp = log -p
   ls = log --pretty=format:'%Cred%h %Creset%s %Cblue(%an <%ae>)%Creset' -n 5
+  ls1 = ls -n1
+  ls2 = ls -n2
+  ls3 = ls -n3
   m  = merge
   p  = push
   po = push origin
