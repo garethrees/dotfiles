@@ -254,6 +254,7 @@ nmap <Leader>hr <Plug>GitGutterUndoHunk
 " Ack
 nmap <Leader>a :Ack!
 nmap <Leader>s :call Search("")<left><left>
+nmap <Leader>* :call Search(expand('<cword>'))<CR>
 
 " vim-rspec mappings
 map <Leader>T :call RunCurrentSpecFile()<CR>
