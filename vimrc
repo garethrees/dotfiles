@@ -135,6 +135,9 @@ let g:ruby_fold = 1
 " Faster updates (Mainly for git-gutter. Default is 4s)
 set updatetime=250
 
+" Disable ~/vim/.netrwhist
+let g:netrw_dirhistmax=0
+
 " Search
 " -----------------------------------------------------------------------------
 
