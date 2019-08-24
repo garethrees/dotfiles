@@ -20,6 +20,7 @@
   la = log --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cblue(%an)%Creset' --decorate --numstat
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(blue)(%an <%ae>)%Creset' --abbrev-commit --date=relative
   ll = log --pretty=format:'%Cred%h %Creset%s %Cblue(%an <%ae>)%Creset' -n 15
+  ln = ls -n
   lp = log -p
   ls = log --pretty=format:'%Cred%h %Creset%s %Cblue(%an <%ae>)%Creset' -n 5
   ls1 = ls -n1
