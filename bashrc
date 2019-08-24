@@ -7,7 +7,19 @@ export EDITOR='vim'
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
-# Path
+# Path (Lower to higher precedence)
+PATH="/usr/local/sbin:$PATH"
+
+if [[ -d /usr/local/opt/ruby/bin ]]
+  then
+    PATH="/usr/local/opt/ruby/bin:$PATH"
+fi
+
+if [[ -d /usr/local/lib/ruby/gems/2.6.0/bin ]]
+  then
+    PATH="/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
+fi
+
 PATH="/usr/local/bin:$PATH"
 PATH="$HOME/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin
