@@ -6,8 +6,9 @@
   <string>uk.co.garethrees.clear-downloads</string>
   <key>ProgramArguments</key>
   <array>
-    <string>mv</string>
-    <string>~/Downloads/* ~/doc/current</string>
+    <string>sh</string>
+    <string>-c</string>
+    <string>/Users/gareth/bin/doclinks && mv /Users/gareth/Downloads/* /Users/gareth/doc/previous/</string>
   </array>
   <key>StartCalendarInterval</key>
   <array>

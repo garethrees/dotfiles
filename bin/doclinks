@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+# Heavily based on http://leahneukirchen.org/repos/blogcode/mess.rb
+require 'fileutils'
+require 'date'
+
+def check_symlink!(link)
+  if File.exist?(link) && !File.symlink?(link)
+    warn "`#{link}' is not a symlink, something is wrong."
+  end
+end
+
+# Set the static dirs
+DOC_DIR     = File.expand_path(File.join(ENV['HOME'], 'doc')).freeze
+CURRENT_DIR = File.expand_path(File.join(ENV['HOME'], 'Downloads')).freeze
+
+# Built a path for "last month's" dir
+previous_dir = File.join(DOC_DIR, DateTime.now.prev_month.strftime('%Y-%m'))
+
+# Build the full paths for each symlink
+current_link = File.join(DOC_DIR, 'current')
+previous_link = File.join(DOC_DIR, 'previous')
+
+# Create a directory for last month
+FileUtils.mkdir_p(previous_dir) unless File.directory?(previous_dir)
+
+# Error out if previous_link isn't actually a symlink
+check_symlink!(previous_link)
+
+# Update previous_link to the current last month if we need to
+if File.readlink(previous_link) != File.expand_path(previous_dir)
+  FileUtils.rm_f(previous_link)
+  FileUtils.ln_s(previous_dir, previous_link)
+end
+
+# Only create the current symlink if it doesn't exist
+unless File.exist?(current_link) && File.symlink?(current_link)
+  FileUtils.ln_s(CURRENT_DIR, current_link)
+end
