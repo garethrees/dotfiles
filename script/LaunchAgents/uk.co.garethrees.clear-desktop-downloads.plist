@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>uk.co.garethrees.clear-downloads</string>
+  <string>uk.co.garethrees.clear-desktop-downloads</string>
   <key>ProgramArguments</key>
   <array>
     <string>sh</string>
     <string>-c</string>
-    <string>/Users/gareth/bin/doclinks && mv /Users/gareth/Downloads/* /Users/gareth/doc/previous/</string>
+    <string>/Users/gareth/bin/doclinks && mv /Users/gareth/Downloads/* /Users/gareth/doc/previous/ && mv /Users/gareth/Desktop/* /Users/gareth/doc/previous/</string>
   </array>
   <key>StartCalendarInterval</key>
   <array>
