@@ -275,10 +275,10 @@ nmap <Leader>* :call Search(expand('<cword>'))<CR>
 vnoremap <Leader>* :call Search(GetVisualSelection())<CR>
 
 " vim-rspec mappings
-map <Leader>T :call RunCurrentSpecFile()<CR>
-map <Leader>S :call RunNearestSpec()<CR>
-map <Leader>L :call RunLastSpec()<CR>
-map <Leader>A :call RunAllSpecs()<CR>
+map <Leader>tf :call RunCurrentSpecFile()<CR>
+map <Leader>tt :call RunNearestSpec()<CR>
+map <Leader>tl :call RunLastSpec()<CR>
+map <Leader>ta :call RunAllSpecs()<CR>
 
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
