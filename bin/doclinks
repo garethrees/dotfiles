@@ -9,6 +9,8 @@ def check_symlink!(link)
   end
 end
 
+exit_code = 1
+
 # Set the static dirs
 DOC_DIR     = File.expand_path(File.join(ENV['HOME'], 'doc')).freeze
 CURRENT_DIR = File.expand_path(File.join(ENV['HOME'], 'Downloads')).freeze
@@ -30,9 +32,12 @@ check_symlink!(previous_link)
 if File.readlink(previous_link) != File.expand_path(previous_dir)
   FileUtils.rm_f(previous_link)
   FileUtils.ln_s(previous_dir, previous_link)
+  exit_code = 0
 end
 
 # Only create the current symlink if it doesn't exist
 unless File.exist?(current_link) && File.symlink?(current_link)
   FileUtils.ln_s(CURRENT_DIR, current_link)
 end
+
+exit exit_code
