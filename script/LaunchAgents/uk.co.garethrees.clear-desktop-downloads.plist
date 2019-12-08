@@ -15,16 +15,16 @@
   <key>StartCalendarInterval</key>
   <array>
     <dict>
-      <key>Minute</key>
-      <integer>0</integer>
+      <key>Day</key>
+      <integer>1</integer>
     </dict>
     <dict>
       <key>Hour</key>
       <integer>0</integer>
     </dict>
     <dict>
-      <key>Month</key>
-      <integer>1</integer>
+      <key>Minute</key>
+      <integer>0</integer>
     </dict>
   </array>
 </dict>
