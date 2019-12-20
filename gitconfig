@@ -42,7 +42,7 @@
   st = status -s
   standup = log --since yesterday --oneline --author ADD_EMAIL_HERE
   today = git log --since today --oneline --author ADD_EMAIL_HERE
-  wip = git commit . -m 'WIP'
+  wip = commit -a -m 'WIP'
   # search logs for commit ticket number
   # e.g. git find #1234
   find = "!f() { git log --oneline | grep \"$@\"; }; f"
