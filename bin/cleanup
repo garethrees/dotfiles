@@ -1,0 +1,23 @@
+#!/bin/bash
+
+steptxt="----->"
+
+start() {
+  echo "$steptxt $@"
+}
+
+finished() {
+  echo "$steptxt done"
+}
+
+start "brew cleanup"
+brew cleanup
+finished
+
+start "vagrant box prune"
+vagrant box prune --force --keep-active-boxes
+finished
+
+start "gem cleanup"
+gem cleanup
+finished
