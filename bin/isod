@@ -1,0 +1,3 @@
+#!/bin/sh
+exec date '+%Y-%m-%d'
+exit 1
