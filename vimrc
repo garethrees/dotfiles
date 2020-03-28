@@ -37,6 +37,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'Konfekt/FastFold'
 Plugin 'tmhedberg/matchit'
 Plugin 'jgdavey/vim-blockle'
+Plugin 'jpalardy/spacehi.vim'
 
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'jgdavey/tslime.vim'
@@ -83,9 +84,11 @@ elseif $ITERM_PROFILE == 'solarized_light'
   set background=light
 endif
 
-" Highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
+" Highlight tabs, nbsp and trailing whitespace
+autocmd syntax * SpaceHi
+let g:spacehi_spacecolor="ctermfg=White ctermbg=Red guifg=White guibg=Red"
+let g:spacehi_tabcolor="ctermfg=White ctermbg=Red guifg=White guibg=Red"
+let g:spacehi_nbspcolor="ctermfg=White ctermbg=Red guifg=White guibg=Red"
 
 " Clipboard
 set clipboard=unnamed
@@ -99,7 +102,7 @@ set nowritebackup
 
 " Show guideline for ideal width
 set cc=80
-" highight current line
+" highlight current line
 set cursorline
 " Slightly shorter line-length for commit messages
 autocmd Filetype gitcommit setlocal spell textwidth=72 cc=72
