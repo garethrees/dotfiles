@@ -6,30 +6,34 @@ function usage {
   this=$(basename "$0");
 
   cat <<EOF
-Usage: $this [-h] [-o <orientation>] [-w <width>] <image> [<image>...] <output>
+Usage: $this [-h] [-w <width>] [<command>] <image> [<image>...] <output>
 
 Combine multiple images into a single tiled image.
 
 ARGUMENTS
+  <command>: Tiling layout. Defaults to "2up".
   <image>: Images to tile.
   <output>: Output image.
 
 OPTIONS
-  -h                  display this help message
-  -o <orientation>    tile in HORIZONTAL or VERTICAL orientation. Defaults to
-                      $ORIENTATION.
-  -w <width>          resize input images to the given with in pixels. Defaults
+  -h                  Display this help message.
+  -w <width>          Resize input images to the given with in pixels. Defaults
                       to $WIDTH.
+
+COMMANDS
+  horizontal    Tile all images horizontally in a single row.
+  vertical      Tile all images vertically in a single column.
+  2up           Tile images vertically, split across two columns.
 
 EXAMPLES
   Tile foo.jpg and bar.jpg horizontally at 800px width per image to out.jpg.
-  $ $this foo.jpg bar.jpg out.jpg
+  $ $this -w 800 horizontal foo.jpg bar.jpg out.jpg
 
   As above, but convert to PNG on output.
-  $ $this foo.jpg bar.jpg out.png
+  $ $this -w 800 horizontal foo.jpg bar.jpg out.png
 
   Tile three images vertically at 600px width per image.
-  $ $this -o VERTICAL -w 600 foo.jpg bar.jpg baz.jpg out.jpg
+  $ $this -w 600 vertical foo.jpg bar.jpg baz.jpg out.jpg
 
 ERRORS
   1 User misuse.
@@ -42,40 +46,62 @@ function misuse {
   exit 1;
 }
 
-function __orientation {
-  if [[ "$ORIENTATION" = "HORIZONTAL" ]]; then
-    echo "x1"
-  else
-    echo "1x"
+function __horizontal {
+  if [[ "$#" -lt 2 ]]; then
+    misuse;
   fi
+
+  montage -geometry "$WIDTH" -tile x1 "$@"
 }
 
+function __vertical {
+  if [[ "$#" -lt 2 ]]; then
+    misuse;
+  fi
+
+  montage -geometry "$WIDTH" -tile 1x "$@"
+}
+
+function __2up {
+  if [[ "$#" -lt 2 ]]; then
+    misuse;
+  fi
+
+  montage -geometry "$WIDTH" -tile 2x "$@"
+}
+
+# Entrypoint
 function main {
   if [[ "$#" -lt 2 ]]; then
     misuse;
   fi
 
-  local tile;
-  tile=$(__orientation);
+  local action=$1;
 
-  montage -geometry "$WIDTH" -tile "$tile" "$@"
+  # Real work starts here.
+  case "$action" in
+    'horizontal')
+      shift;
+      __horizontal "$@" ;;
+    'vertical')
+      shift;
+      __vertical "$@" ;;
+    '2up')
+      shift;
+      __2up "$@" ;;
+    *)
+      __2up "$@" ;;
+  esac
+  exit $?
 }
 
-ORIENTATION=HORIZONTAL;
 WIDTH=800;
 
-while getopts "ho:w:" opt; do
+while getopts "hw:" opt; do
   case $opt in
     h)
       usage
       exit 0
-      ;;
-    o)
-      ORIENTATION=$OPTARG;
-      [[ ! $ORIENTATION =~ HORIZONTAL|VERTICAL ]] && {
-        echo "Incorrect options provided. Must be HORIZONTAL or VERTICAL."
-        exit 1
-      }
       ;;
     w)
       WIDTH=$OPTARG;
