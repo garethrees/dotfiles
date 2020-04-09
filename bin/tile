@@ -1,0 +1,108 @@
+#!/bin/bash
+
+set -e
+
+function usage {
+  this=$(basename "$0");
+
+  cat <<EOF
+Usage: $this [-h] [-o <orientation>] [-w <width>] <image> [<image>...] <output>
+
+Combine multiple images into a single tiled image.
+
+ARGUMENTS
+  <image>: Images to tile.
+  <output>: Output image.
+
+OPTIONS
+  -h                  display this help message
+  -o <orientation>    tile in HORIZONTAL or VERTICAL orientation. Defaults to
+                      $ORIENTATION.
+  -w <width>          resize input images to the given with in pixels. Defaults
+                      to $WIDTH.
+
+EXAMPLES
+  Tile foo.jpg and bar.jpg horizontally at 800px width per image to out.jpg.
+  $ $this foo.jpg bar.jpg out.jpg
+
+  As above, but convert to PNG on output.
+  $ $this foo.jpg bar.jpg out.png
+
+  Tile three images vertically at 600px width per image.
+  $ $this -o VERTICAL -w 600 foo.jpg bar.jpg baz.jpg out.jpg
+
+ERRORS
+  1 User misuse.
+  2 Fatal error.
+EOF
+}
+
+function misuse {
+  usage;
+  exit 1;
+}
+
+function __orientation {
+  if [[ "$ORIENTATION" = "HORIZONTAL" ]]; then
+    echo "x1"
+  else
+    echo "1x"
+  fi
+}
+
+function main {
+  if [[ "$#" -lt 2 ]]; then
+    misuse;
+  fi
+
+  local tile;
+  tile=$(__orientation);
+
+  montage -geometry "$WIDTH" -tile "$tile" "$@"
+}
+
+ORIENTATION=HORIZONTAL;
+WIDTH=800;
+
+while getopts "ho:w:" opt; do
+  case $opt in
+    h)
+      usage
+      exit 0
+      ;;
+    o)
+      ORIENTATION=$OPTARG;
+      [[ ! $ORIENTATION =~ HORIZONTAL|VERTICAL ]] && {
+        echo "Incorrect options provided. Must be HORIZONTAL or VERTICAL."
+        exit 1
+      }
+      ;;
+    w)
+      WIDTH=$OPTARG;
+      [[ ! $WIDTH =~ ^-?[0-9]+$ ]] && {
+        echo "Incorrect options provided. Must be an Integer."
+        exit 1
+      }
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument" >&2
+      echo ""
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option -$OPTARG" >&2
+      echo ""
+      usage
+      exit 1
+      ;;
+  esac
+done
+
+shift $(($OPTIND - 1))
+
+if ! [[ -x "$(command -v montage)" ]]; then
+  echo 'Error: montage is not installed.' >&2
+  exit 2
+fi
+
+main "$@"
