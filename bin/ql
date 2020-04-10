@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# View file with Quick Look
+main() {
+  qlmanage -p "$1" &>/dev/null
+}
+
+if ! [[ -x "$(command -v qlmanage)" ]]; then
+  echo 'Error: qlmanage is not installed.' >&2
+  exit 1
+fi
+
+main "$1"
