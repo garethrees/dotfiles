@@ -20,6 +20,7 @@ GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUPSTREAM="auto"
 test -f ~/.script/git_prompt.sh && source ~/.script/git_prompt.sh
+test -f ~/.script/jobs_prompt.sh && source ~/.script/jobs_prompt.sh
 
 tput sgr 0 0
 
@@ -41,6 +42,7 @@ SOLAR_WHITE=$(tput setaf 254)
 style_user="\[${RESET}${SOLAR_ORANGE}\]"
 style_host="\[${RESET}${SOLAR_YELLOW}\]"
 style_path="\[${RESET}${SOLAR_GREEN}\]"
+style_jobs="\[${RESET}${SOLAR_BLUE}\]"
 style_chars="\[${RESET}${SOLAR_WHITE}\]"
 style_branch="${SOLAR_CYAN}"
 
@@ -52,16 +54,26 @@ elif [[ "$USER" == "root" ]]; then
   style_user="\[${BOLD}${SOLAR_RED}\]"
 fi
 
+PROMPT_COMMAND=__prompt_command # Func to gen PS1 after CMDs
+
+__prompt_command() {
 # Build the prompt
-PS1="" # Reset
-PS1+="${style_user}\u" # Username
-if ! [[ $(hostname) =~ gareth-* ]]; then
-  PS1+="${style_chars}@" # @
-  PS1+="${style_host}\h" # Host
-fi
-PS1+="${style_chars}: " # :
-PS1+="${style_path}\w " # Working directory
-PS1+='${style_branch}$(__git_ps1 "(%s)")' # git prompt
-PS1+="\n" # Newline
-PS1+="${style_chars}\$ \[${RESET}\]" # $ (and reset color)
+  PS1="" # Reset
+  PS1+="${style_user}\u" # Username
+  if ! [[ $(hostname) =~ gareth-* ]]; then
+    PS1+="${style_chars}@" # @
+    PS1+="${style_host}\h" # Host
+  fi
+  PS1+="${style_chars}: " # :
+
+  if [[ $(__jobs_count) > 0 ]]; then
+    PS1+="${style_jobs}$(__jobs_ps1) " # Running jobs
+  fi
+
+  PS1+="${style_path}\w " # Working directory
+  PS1+='${style_branch}$(__git_ps1 "(%s)")' # git prompt
+  PS1+="\n" # Newline
+  PS1+="${style_chars}\$ \[${RESET}\]" # $ (and reset color)
+}
+
 export PS1
