@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+#
+Signal.trap('SIGPIPE', 'SYSTEM_DEFAULT')
 
 ARGF.each do |line|
   puts $1 if /href=\"(.*?)\"/i.match(line.chomp)
