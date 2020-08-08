@@ -1,0 +1,55 @@
+#!/bin/bash
+
+function usage {
+  this=$(basename "$0");
+
+  cat <<EOF
+Usage: $this <command>
+
+ARGUMENTS
+  <command>: Command to run
+
+COMMANDS
+  stats      Get basic stats from ZettelKasten notes directory
+EOF
+}
+
+function misuse {
+  usage;
+  exit 1;
+}
+function __stats_notes {
+  find "$NOTES_DIR" -name "*.md" | wc -l | awk '{print $1}'
+}
+
+function __stats_words {
+  wc -w "$NOTES_DIR/"*.md | tail -n 1 | awk '{print $1}'
+}
+
+function stats {
+  echo "\
+Notes: $(__stats_notes)
+Words: $(__stats_words)"
+}
+
+# Entrypoint
+function main {
+  if [[ "$#" -eq 0 ]]; then
+    misuse;
+  fi
+
+  local action=$1;
+  shift;
+
+  # Real work starts here.
+  case "$action" in
+    'stats')
+      stats ;;
+    *)
+      misuse ;;
+  esac
+  exit $?
+}
+
+NOTES_DIR="$HOME/notes"
+main "$@"
