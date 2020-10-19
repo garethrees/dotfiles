@@ -20,6 +20,11 @@ if [[ -d /usr/local/lib/ruby/gems/2.6.0/bin ]]
     PATH="/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
 fi
 
+if [[ -d /usr/local/lib/ruby/gems/2.7.0/bin ]]
+  then
+    PATH="/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
+fi
+
 PATH="/usr/local/bin:$PATH"
 PATH="$HOME/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin
