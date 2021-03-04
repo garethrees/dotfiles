@@ -42,6 +42,11 @@ fi
 [[ -f /etc/bashrc ]] && source /etc/bashrc
 [[ -f ~/.bash_prompt ]] && source ~/.bash_prompt
 [[ -f ~/.bash_functions ]] && source ~/.bash_functions
+
+for file in $HOME/.bash/*.sh; do
+  source $file
+done
+
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 
 # Completion
