@@ -72,8 +72,9 @@
   token = !security find-internet-password -a garethrees -s github.com -l 'ghi token' -w
 [filter "lfs"]
   required = true
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
 [gitsh]
 	prompt = "%D %c%b%#%w"
 	noGreeting = true
