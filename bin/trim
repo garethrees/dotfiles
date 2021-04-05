@@ -1,0 +1,4 @@
+#!/bin/bash
+# Strip leading and trailing whitespace
+# https://www.cyberciti.biz/faq/bash-remove-whitespace-from-string/
+awk '{gsub(/^ +| +$/,"")} {print $0}'
