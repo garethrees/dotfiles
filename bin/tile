@@ -51,7 +51,7 @@ function __horizontal {
     misuse;
   fi
 
-  montage -geometry "$WIDTH" -tile x1 "$@"
+  montage -auto-orient -geometry "$WIDTH" -tile x1 "$@"
 }
 
 function __vertical {
@@ -59,7 +59,7 @@ function __vertical {
     misuse;
   fi
 
-  montage -geometry "$WIDTH" -tile 1x "$@"
+  montage -auto-orient -geometry "$WIDTH" -tile 1x "$@"
 }
 
 function __2up {
@@ -67,7 +67,7 @@ function __2up {
     misuse;
   fi
 
-  montage -geometry "$WIDTH" -tile 2x "$@"
+  montage -auto-orient -geometry "$WIDTH" -tile 2x "$@"
 }
 
 # Entrypoint
