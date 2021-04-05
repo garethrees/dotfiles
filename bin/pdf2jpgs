@@ -1,0 +1,73 @@
+#!/bin/bash
+
+set -e
+
+function usage {
+  this=$(basename "$0");
+
+  cat <<EOF
+Usage: $this <pdf>
+
+Split PDF into multiple JPG images
+
+ARGUMENTS
+  <pdf>: PDF to convert.
+
+OPTIONS
+  -h                  Display this help message.
+
+ERRORS
+  1 User misuse.
+  2 Fatal error.
+EOF
+}
+
+function misuse {
+  usage;
+  exit 1;
+}
+
+function __convert {
+  local pdf="$1"
+  local jpg_basename="$(basename $1 .pdf)"
+  convert -density 192 -quality 100 "$pdf" "$jpg_basename.jpg"
+}
+
+# Entrypoint
+function main {
+  if [[ "$#" -ne 1 ]]; then
+    misuse;
+  fi
+
+  __convert "$@"
+  exit $?
+}
+
+while getopts "h" opt; do
+  case $opt in
+    h)
+      usage
+      exit 0
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument" >&2
+      echo ""
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option -$OPTARG" >&2
+      echo ""
+      usage
+      exit 1
+      ;;
+  esac
+done
+
+shift $(($OPTIND - 1))
+
+if ! [[ -x "$(command -v convert)" ]]; then
+  echo 'Error: convert is not installed.' >&2
+  exit 2
+fi
+
+main "$@"
