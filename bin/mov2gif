@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# https://superuser.com/a/436109
+input="$1"
+output="$2"
+tmp_output="tmp-$output"
+
+speed_slow="5"
+speed_med="10"
+speed_fast="20"
+
+ffmpeg -ss 00:00:00.000 -i $input -pix_fmt rgb24 -r $speed_slow -t 00:00:10.000 $tmp_output && \
+  convert -layers Optimize $tmp_output $output && \
+  rm $tmp_output
