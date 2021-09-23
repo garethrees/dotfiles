@@ -36,6 +36,7 @@
   recent = branch --sort=-committerdate --format="%(committerdate:relative)%09%(refname:short)"
   rp = rebase --show-current-patch
   ri = rebase -i
+  rn = rebase -i --no-autosquash
   s  = stash
   sa = stash apply
   search = log --pretty=format:'%Cred%h %Creset%s %Cblue(%an <%ae>)%Creset' --all --grep
