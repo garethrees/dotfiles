@@ -31,6 +31,7 @@
   p  = push
   po = push origin
   r  = rebase
+  ra = rebase --abort
   rc = rebase --continue
   recent = branch --sort=-committerdate --format="%(committerdate:relative)%09%(refname:short)"
   rp = rebase --show-current-patch
