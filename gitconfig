@@ -80,3 +80,5 @@
 [gitsh]
 	prompt = "%D %c%b%#%w"
 	noGreeting = true
+[init]
+  defaultBranch = master
