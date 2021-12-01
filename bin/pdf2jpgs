@@ -30,6 +30,8 @@ function misuse {
 function __convert {
   local pdf="$1"
   local jpg_basename="$(basename $1 .pdf)"
+  # TODO: Add option to sequentially number output jpgs?
+  #convert -density 192 -quality 100 "$pdf" "$jpg_basename-%02d.jpg"
   convert -density 192 -quality 100 "$pdf" "$jpg_basename.jpg"
 }
 
