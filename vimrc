@@ -285,3 +285,10 @@ map <Leader>ta :call RunAllSpecs()<CR>
 
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
+
+
+function! RubyHashesSelected()
+  :'<,'>s/:([^ ])(\s)=>/\1:/ge
+endfunction
+
+vmap <Leader>rhh :call RubyHashesSelected()<CR>
