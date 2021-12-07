@@ -20,6 +20,7 @@ for source in "$HOME/.bin/"*; do
   ln -sFv "$source" "$target"
 done
 
-source "$DOTFILES_DIR/script/install-user-bins.sh"
-source "$DOTFILES_DIR/script/install-launch-agents.sh"
-source "$DOTFILES_DIR/script/install-services.sh"
+for installer in "$DOTFILES_DIR/script/install-"*.sh; do
+  echo "==> Installing $installer"
+  source $installer
+done
