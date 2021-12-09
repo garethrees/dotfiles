@@ -141,6 +141,9 @@ set updatetime=250
 " Disable ~/vim/.netrwhist
 let g:netrw_dirhistmax=0
 
+" Use new snipMate parser
+let g:snipMate = { 'snippet_version' : 1 }
+
 " Search
 " -----------------------------------------------------------------------------
 
