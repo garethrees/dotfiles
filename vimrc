@@ -158,6 +158,10 @@ set hlsearch
 " wrap-around search
 set wrapscan
 
+" fzf layout anchored to bottom of window with no preview
+let g:fzf_layout = { 'window': '14new' }
+let g:fzf_preview_window = []
+
 " Always show gitgutter – annoying that it moves around all the time
 if exists('&signcolumn')  " Vim 7.4.2201
   set signcolumn=yes
