@@ -270,8 +270,13 @@ nmap <leader>n :set number!<CR>
 nmap <leader>p :set paste!<CR>
 " Toggle search highlight
 nmap <leader>l :nohlsearch<CR>
-" Ctrl-p for fzf to mirror Ctrl-p behaviour
-map <C-p> :Files<CR>
+
+" Ctrl-p for fzf to mirror Ctrl-p behaviour; search only git-tracked files
+map <C-p> :GFiles<CR>
+
+" Prefix C-p with <leader> to search _all_ files
+map <leader><C-p> :Files<CR>
+
 " fzf buffers
 nmap <leader>b :Buffers<CR>
 " vim-gitgutter hunk add
