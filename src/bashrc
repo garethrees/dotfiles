@@ -45,11 +45,11 @@ fi
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 
 # Completion
-[[ -f ~/.script/git_completion.sh ]] && source ~/.script/git_completion.sh
-[[ -f ~/.script/tmuxinator.bash ]] && source ~/.script/tmuxinator.bash
+[[ -f ~/.lib/git_completion.sh ]] && source ~/.lib/git_completion.sh
+[[ -f ~/.lib/tmuxinator.bash ]] && source ~/.lib/tmuxinator.bash
 
 # Extras
-[[ -f ~/.script/man_color.sh ]] && source ~/.script/man_color.sh
+[[ -f ~/.lib/man_color.sh ]] && source ~/.lib/man_color.sh
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 # added by travis gem
 [[ -f ~/.travis/travis.sh ]] && source ~/.travis/travis.sh

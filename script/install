@@ -2,25 +2,31 @@
 set -e
 
 cd "$(dirname "$0")/.."
-DOTFILES_DIR=$(pwd)
+export DOTFILES_DIR=$(pwd)
 
 (exec "$DOTFILES_DIR/script/uninstall")
 
-for source in *; do
+echo "==> Installing dotfiles"
+for source in src/*; do
   target="$HOME/.$(basename "$source")"
   ln -sFv "$DOTFILES_DIR/$source" "$target"
 done
 
+echo "==> Installing lib"
+ln -sFv "$DOTFILES_DIR/lib" "$HOME/.lib"
+
 # Link binfiles
+echo "==> Installing bin"
 BIN_DIR="$HOME/bin"
 mkdir -pv $BIN_DIR
 
+echo "==> Linkin bins"
 for source in "$HOME/.bin/"*; do
   target="$BIN_DIR/$(basename "$source")"
   ln -sFv "$source" "$target"
 done
 
-for installer in "$DOTFILES_DIR/script/install-"*.sh; do
+for installer in script/install-*.sh; do
   echo "==> Installing $installer"
   source $installer
 done

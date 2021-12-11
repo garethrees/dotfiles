@@ -4,7 +4,8 @@ set -e
 cd "$(dirname "$0")/.."
 DOTFILES_DIR=$(pwd)
 
-for source in *; do
+echo "==> Uninstalling dotfiles"
+for source in "$DOTFILES_DIR/src/"*; do
   target="$HOME/.$(basename "$source")"
   if [ -L "$target" ]; then
     if readlink "$target" | grep -q "$DOTFILES_DIR"; then
@@ -13,4 +14,49 @@ for source in *; do
   fi
 done
 
+echo "==> Uninstalling lib"
+if [ -L "$HOME/.lib" ]; then
+  if readlink "$HOME/.lib" | grep -q "$DOTFILES_DIR"; then
+    rm -v "$HOME/.lib"
+  fi
+fi
+
+echo "==> Uninstalling bin"
 rm -rfv "$HOME/bin"
+
+echo "==> Uninstalling Folder Actions"
+if [[ -d "$HOME/Library/Workflows/Applications/Folder Actions" ]]
+  then
+    for target in "$HOME/Library/Workflows/Applications/Folder Actions/"*; do
+      if [ -L "$target" ]; then
+        if readlink "$target" | grep -q "$DOTFILES_DIR"; then
+          rm -v "$target"
+        fi
+      fi
+    done
+fi
+
+echo "==> Uninstalling LaunchAgents"
+if [[ -d "$HOME/Library/LaunchAgents" ]]
+  then
+    for target in "$HOME/Library/LaunchAgents/"*; do
+      if [ -L "$target" ]; then
+        if readlink "$target" | grep -q "$DOTFILES_DIR"; then
+          launchctl unload "$target"
+          rm -v "$target"
+        fi
+      fi
+    done
+fi
+
+echo "==> Uninstalling Services"
+if [[ -d "$HOME/Library/Services" ]]
+  then
+    for target in "$HOME/Library/Services/"*; do
+      if [ -L "$target" ]; then
+        if readlink "$target" | grep -q "$DOTFILES_DIR"; then
+          rm -v "$target"
+        fi
+      fi
+    done
+fi

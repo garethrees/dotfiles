@@ -2,7 +2,7 @@
 
 if [[ -d "$HOME/Library/LaunchAgents" ]]
   then
-    for source in "$HOME/.script/LaunchAgents/"*; do
+    for source in "$DOTFILES_DIR/lib/LaunchAgents/"*; do
       target="$HOME/Library/LaunchAgents/$(basename "$source")"
       launchctl unload "$target"
       ln -sFv "$source" "$target"
