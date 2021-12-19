@@ -1,6 +1,8 @@
 #!/bin/bash
 
-echo "==> Installing diff-highlight..."
+echo "==> Installing user bins..."
+
+echo "--> Installing diff-highlight..."
 # Install diff-highlight on Ubuntu/Debian
 # Copy it so that we can add +x perms
 if [[ -f /usr/share/doc/git/contrib/diff-highlight/diff-highlight ]]

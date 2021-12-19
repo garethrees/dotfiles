@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "==> Installing LaunchAgents..."
+
 if [[ -d "$HOME/Library/LaunchAgents" ]]; then
   for source in "$DOTFILES_DIR/lib/LaunchAgents/"*; do
     target="$HOME/Library/LaunchAgents/$(basename "$source")"

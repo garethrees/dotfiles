@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "==> Installing Folder Actions..."
+
 # Not created by default on fresh install
 if [[ -d "$HOME/Library" ]]; then
   mkdir -p "$HOME/Library/Workflows/Applications/Folder Actions"
