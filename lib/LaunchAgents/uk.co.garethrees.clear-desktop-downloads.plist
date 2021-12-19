@@ -8,7 +8,7 @@
   <array>
     <string>sh</string>
     <string>-c</string>
-    <string>/Users/gareth/bin/doclinks && mv /Users/gareth/Downloads/* /Users/gareth/doc/previous/ && mv /Users/gareth/Desktop/* /Users/gareth/doc/previous/</string>
+    <string>/Users/gareth/bin/doclinks && mv /Users/gareth/current/* /Users/gareth/doc/previous/ && mv /Users/gareth/Desktop/* /Users/gareth/doc/previous/</string>
   </array>
   <key>RunAtLoad</key>
   <false/>

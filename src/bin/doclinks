@@ -11,15 +11,13 @@ end
 
 exit_code = 1
 
-# Set the static dirs
-DOC_DIR     = File.expand_path(File.join(ENV['HOME'], 'doc')).freeze
-CURRENT_DIR = File.expand_path(File.join(ENV['HOME'], 'Downloads')).freeze
+# Set the static dir
+DOC_DIR = File.expand_path(File.join(ENV['HOME'], 'doc')).freeze
 
 # Built a path for "last month's" dir
 previous_dir = File.join(DOC_DIR, DateTime.now.prev_month.strftime('%Y-%m'))
 
-# Build the full paths for each symlink
-current_link = File.join(DOC_DIR, 'current')
+# Build the full path the symlink
 previous_link = File.join(DOC_DIR, 'previous')
 
 # Create a directory for last month
@@ -33,11 +31,6 @@ if File.readlink(previous_link) != File.expand_path(previous_dir)
   FileUtils.rm_f(previous_link)
   FileUtils.ln_s(previous_dir, previous_link)
   exit_code = 0
-end
-
-# Only create the current symlink if it doesn't exist
-unless File.exist?(current_link) && File.symlink?(current_link)
-  FileUtils.ln_s(CURRENT_DIR, current_link)
 end
 
 exit exit_code
