@@ -1,0 +1,18 @@
+# ~/.tmuxinator/bb-studio-project.yml
+
+name: bb-studio-project
+
+startup_window: main
+
+windows:
+  - main:
+      root: ~/src/garethrees/bb-studio-individual-project
+      layout: even-horizontal
+      panes:
+        - #empty
+        - gitsh
+  - server:
+      root: ~/src/garethrees/bb-studio-individual-project
+      layout: even-horizontal
+      panes:
+        - bundle exec jekyll serve

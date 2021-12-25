@@ -1,0 +1,18 @@
+# ~/.tmuxinator/gh-pages-alaveteli.yml
+
+name: gh-pages-alaveteli
+
+startup_window: main
+
+windows:
+  - main:
+      root: ~/src/mysociety/alaveteli-gh-pages
+      layout: even-horizontal
+      panes:
+        - #empty
+        - gitsh
+  - server:
+      root: ~/src/mysociety/alaveteli-gh-pages
+      layout: even-horizontal
+      panes:
+        - bundle exec jekyll serve

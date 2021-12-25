@@ -1,0 +1,26 @@
+# ~/.tmuxinator/statements.yml
+
+name: statements
+
+startup_window: main
+
+windows:
+  - statements_downloader:
+      root: ~/Dropbox/statements_downloader
+      layout: even-horizontal
+      panes:
+        - #empty
+        - remote_shell:
+          - vagrant up && vagrant ssh
+          - cd /vagrant
+  - statements:
+      root: ~/Dropbox/statements
+      layout: even-horizontal
+      panes:
+        - #empty
+  - data:
+      root: ~/Dropbox/statements-accounts
+      layout: even-horizontal
+      panes:
+        - #empty
+

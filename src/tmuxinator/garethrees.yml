@@ -1,0 +1,18 @@
+# ~/.tmuxinator/garethrees.yml
+
+name: garethrees
+
+startup_window: main
+
+windows:
+  - main:
+      root: ~/src/garethrees/garethrees.github.com
+      layout: even-horizontal
+      panes:
+        - #empty
+        - gitsh
+  - server:
+      root: ~/src/garethrees/garethrees.github.com
+      layout: even-horizontal
+      panes:
+        - bundle exec jekyll serve

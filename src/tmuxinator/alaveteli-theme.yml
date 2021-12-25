@@ -1,0 +1,29 @@
+# ~/.tmuxinator/alaveteli-theme.yml
+<% theme_name = @args[0] %>
+
+name: <%= theme_name %>
+startup_window: <%= theme_name %>
+root: ~
+
+windows:
+  - <%= theme_name %>:
+      root: ~/src/mysociety/alaveteli-themes/<%= theme_name %>
+      layout: 9021,238x56,0,0{118x56,0,0,13,119x56,119,0[119x27,119,0,15,119x28,119,28,16]}
+      panes:
+        - #empty
+        - gitsh
+        - remote_shell:
+          - cd ~/src/mysociety/alaveteli
+          - vagrant up
+          - vagrant ssh
+          - cd ~/alaveteli
+  - core:
+      root: ~/src/mysociety/alaveteli
+      layout: 9021,238x56,0,0{118x56,0,0,13,119x56,119,0[119x27,119,0,15,119x28,119,28,16]}
+      panes:
+        - #empty
+        - gitsh
+        - remote_shell:
+          - vagrant up
+          - vagrant ssh
+          - cd ~/alaveteli

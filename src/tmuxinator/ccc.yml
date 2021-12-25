@@ -1,0 +1,30 @@
+# ~/.tmuxinator/ccc
+
+name: ccc
+startup_window: scripts
+
+windows:
+  - scripts:
+      root: "~/src/garethrees/ccc-scripts"
+      layout: main-vertical
+      panes:
+        - vim .
+        - gitsh
+        - cd
+  - log:
+      root: "/var/log"
+      layout: even-horizontal
+      panes:
+        - less /var/log/ccc.log
+        - less /Library/Application\ Support/com.bombich.ccc/pht_debug.log
+  - diskstation:
+      root: "~"
+      layout: even-horizontal
+      panes:
+        - #empty
+  - com.bombich.ccc:
+      root: "/Library/Application Support/com.bombich.ccc/"
+      layout: even-horizontal
+      panes:
+        - #empty
+

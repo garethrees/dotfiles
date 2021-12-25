@@ -1,0 +1,39 @@
+# ~/.tmuxinator/alaveteli.yml
+
+name: alaveteli
+startup_window: main
+
+windows:
+  - main:
+      root: ~/src/mysociety/alaveteli
+      layout: 8b62,362x79,0,0{200x79,0,0,0,161x79,201,0[161x39,201,0,3,161x39,201,40,4]}
+      #layout: 7122,179x79,0,0[179x49,0,0{89x49,0,0,6,89x49,90,0,3},179x29,0,50,4]
+      #layout: 4351,362x79,0,0{165x79,0,0,0,196x79,166,0[196x39,166,0,2,196x39,166,40,3]}
+      #layout: main-vertical
+      panes:
+        - #empty
+        - gitsh
+        - remote_shell:
+          - vagrant up
+          - vagrant ssh
+          - cd ~/alaveteli
+  - server:
+      root: ~/src/mysociety/alaveteli
+      layout: even-horizontal
+      panes:
+        - remote_server:
+          - sleep 30
+          - vagrant ssh
+          - cd ~/alaveteli
+          - bin/rails s -b 0.0.0.0
+        - remote_console:
+          - sleep 30
+          - vagrant ssh
+          - cd ~/alaveteli
+          - bin/rails c
+  - ssh:
+    layout: even-horizontal
+    panes:
+      - #empty
+      - #empty
+    

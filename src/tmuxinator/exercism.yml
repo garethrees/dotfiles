@@ -1,0 +1,13 @@
+# ~/.tmuxinator/exercism
+
+name: exercism
+startup_window: main
+
+windows:
+  - main:
+      root: ~/src/garethrees/exercism/ruby
+      layout: 8b62,362x79,0,0{200x79,0,0,0,161x79,201,0[161x39,201,0,3,161x39,201,40,4]}
+      panes:
+        - #empty
+        - #empty
+        - #empty

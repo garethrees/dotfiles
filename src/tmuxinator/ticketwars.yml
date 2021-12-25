@@ -1,0 +1,28 @@
+name: ticketwars
+startup_window: main
+
+windows:
+  - main:
+      root: ~/src/mysociety/ticketwars
+      layout: 8b62,362x79,0,0{200x79,0,0,0,161x79,201,0[161x39,201,0,3,161x39,201,40,4]}
+      panes:
+        - #empty
+        - gitsh
+        - remote_shell:
+          - vagrant up
+          - vagrant ssh
+          - cd /vagrant
+  - server:
+      root: ~/src/mysociety/ticketwars
+      layout: even-horizontal
+      panes:
+        - remote_server:
+          - sleep 30
+          - vagrant ssh
+          - cd /vagrant
+          - bundle exec foreman start
+        - remote_console:
+          - sleep 31
+          - vagrant ssh
+          - cd /vagrant
+          - bundle console
