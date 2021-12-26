@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+# Simplified version of https://github.com/novoid/date2name
+require 'fileutils'
+require 'pathname'
+
+file = ARGV.shift
+abort 'No file given' unless file
+
+file = Pathname.new(file)
+
+date =
+  if /darwin/ =~ RUBY_PLATFORM
+    File.birthtime(file).strftime('%Y-%m-%d')
+  else
+    # TODO
+    abort('TODO: Check linux compatibility!')
+  end
+
+new_path = Pathname.new("#{file.dirname}/#{date}-#{file.basename}")
+
+abort "#{file} already dated!" if file.basename.to_s.start_with?(date)
+abort "#{new_path} already exists!" if File.exist?(new_path)
+
+FileUtils.mv(file, new_path)
