@@ -47,6 +47,11 @@ if [[ -d /opt/homebrew/opt/grep/libexec/gnubin ]]
     PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 fi
 
+if [[ -d /opt/homebrew/opt/ruby/bin ]]
+  then
+    PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+fi
+
 PATH="$HOME/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin
 export GOPATH="$HOME/go"
