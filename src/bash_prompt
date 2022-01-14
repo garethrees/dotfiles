@@ -54,7 +54,9 @@ elif [[ "$USER" == "root" ]]; then
   style_user="\[${BOLD}${SOLAR_RED}\]"
 fi
 
-PROMPT_COMMAND=__prompt_command # Func to gen PS1 after CMDs
+ # Func to gen PS1 after CMDs
+ # Needs account for bash history logging via PROMPT_COMMAND
+PROMPT_COMMAND="$PROMPT_COMMAND && __prompt_command"
 
 __prompt_command() {
 # Build the prompt
