@@ -57,6 +57,9 @@ PATH=$PATH:$HOME/.rvm/bin
 export GOPATH="$HOME/go"
 PATH=$GOPATH/bin:$PATH
 
+# Ignore pointless commands in history
+export HISTIGNORE='pwd:exit:fg:bg:top:clear:history:ls:uptime:df'
+
 # Log History
 BASH_HISTORY_LOG_DIR="$HOME/.bash_history_logs/"
 if [[ EUIr != 0 ]]; then
