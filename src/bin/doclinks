@@ -33,4 +33,5 @@ if File.readlink(previous_link) != File.expand_path(previous_dir)
   exit_code = 0
 end
 
+# exit_code = 0 # TESTING: Always run
 exit exit_code

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -e
+
+# If it's not time to update links doclinks exits with 1.
+# That means we know not to continue with the cleanup here.
+$HOME/bin/doclinks || exit 0
+
+for file in $HOME/current/*; do
+  [[ -d "$file" || -f "$file" ]] || continue
+  mv "$file" ~/doc/previous
+done
+
+for file in $HOME/Desktop/*; do
+  [[ -d "$file" || -f "$file" ]] || continue
+  mv "$file" ~/doc/previous
+done
