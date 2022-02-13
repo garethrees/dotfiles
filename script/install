@@ -20,7 +20,7 @@ echo "==> Installing bin"
 BIN_DIR="$HOME/bin"
 mkdir -pv $BIN_DIR
 
-echo "==> Linkin bins"
+echo "==> Linking bins"
 for source in "$HOME/.bin/"*; do
   target="$BIN_DIR/$(basename "$source")"
   ln -sFv "$source" "$target"
