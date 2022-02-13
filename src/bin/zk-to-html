@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# https://gist.github.com/miy4/09db5ec1c7f6b72eb130?permalink_comment_id=1934185
+# https://stackoverflow.com/a/67595605
+# https://pandoc.org/MANUAL.html#option--shift-heading-level-by
+#
+# TODO: Local CSS
+# TODO: Add template
+# TODO: Wrap all content in <article><section>YIELD</section></article>
+
+bn="$(basename $1)"
+
+rp="$(realpath -s "$1")"
+
+resources="$(dirname "$rp")"
+
+pandoc \
+  --to=html5 \
+  --standalone \
+  --self-contained \
+  --shift-heading-level-by=-1 \
+  --css=https://edwardtufte.github.io/tufte-css/tufte.css \
+  --resource-path="$resources" \
+  --output="$bn.html" \
+  "$rp"
