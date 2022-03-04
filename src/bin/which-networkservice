@@ -5,7 +5,7 @@
 set -e
 
 # Reverse because we want to set the most-preferred device as current
-services=$(networksetup -listnetworkserviceorder | grep 'Hardware Port' | /usr/local/bin/tac)
+services=$(networksetup -listnetworkserviceorder | grep 'Hardware Port' | /usr/bin/tail -r)
 
 while read line; do
   #echo "LINE: $line"
