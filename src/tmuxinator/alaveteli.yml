@@ -13,27 +13,15 @@ windows:
       panes:
         - #empty
         - gitsh
-        - remote_shell:
-          - vagrant up
-          - vagrant ssh
-          - cd ~/alaveteli
+        - #empty
   - server:
       root: ~/src/mysociety/alaveteli
       layout: even-horizontal
       panes:
-        - remote_server:
-          - sleep 30
-          - vagrant ssh
-          - cd ~/alaveteli
-          - bin/rails s -b 0.0.0.0
-        - remote_console:
-          - sleep 30
-          - vagrant ssh
-          - cd ~/alaveteli
-          - bin/rails c
+        - docker/server
+        - dc run --rm app bin/rails c
   - ssh:
     layout: even-horizontal
     panes:
       - #empty
       - #empty
-    
