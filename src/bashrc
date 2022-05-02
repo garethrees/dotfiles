@@ -29,6 +29,11 @@ if [[ -d /usr/local/lib/ruby/gems/2.7.0/bin ]]
     PATH="/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
 fi
 
+if [[ -d /opt/homebrew/lib/ruby/gems/3.0.0/bin ]]
+  then
+    PATH="/opt/homebrew/lib/ruby/gems/3.0.0/bin:$PATH"
+fi
+
 PATH="/usr/local/bin:$PATH"
 
 # https://stackoverflow.com/a/60063337
