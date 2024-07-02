@@ -90,6 +90,9 @@ let g:spacehi_spacecolor="ctermfg=White ctermbg=Red guifg=White guibg=Red"
 let g:spacehi_tabcolor="ctermfg=White ctermbg=Red guifg=White guibg=Red"
 let g:spacehi_nbspcolor="ctermfg=White ctermbg=Red guifg=White guibg=Red"
 
+" Spelling language
+set spell spelllang=en_gb
+
 " Clipboard
 set clipboard=unnamed
 " remember undo after quitting
