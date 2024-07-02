@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Get the total number of arguments
+num_args=$#
+
+# Get the last argument
+last_argument=${!num_args}
+
+# Get all other arguments excluding the last one
+other_args=("${@:1:$#-1}")
+
+"/System/Library/Automator/Combine PDF Pages.action/Contents/MacOS/join" -o "$last_argument" "${other_args[@]}"
